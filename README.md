@@ -1,4 +1,18 @@
-# Weather Forecast Web Application
+# Eurus - Weather Forecast Web Application
+
+This is the continuation of a private Bootcamp Capstone project. The product aims to be a user-friendly weather forecast web application.
+
+# TODOs:
+
+- Migrate from `MDB React` to `TailwindCSS`
+- Fetch APIs from third-party providers, currently `AccuWeather`
+	- Better and more concise data
+- Add some enhancements on UI/UX:
+	- Localization
+	- Icons and tooltips
+	- Rearrangement of some components
+- Apply CI/CDs and deploy the app
+- Convert the web app to a PWA
 
 # Prerequisites
 
@@ -63,7 +77,7 @@
 - [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
 - [Vitest](https://vitest.dev/guide/): Testing library
 
-## Project Structure
+## Project Structure (TBA)
 
 ```markdown
 Weather-Forecast-frontend/
@@ -112,6 +126,7 @@ Weather-Forecast-frontend/
 |__ index.html..................... - HTML entry
 |__ vite.config.js................. - Vite config
 |__ ... (other config files)
+|__ LICENSE
 ```
 
 ## Conventions
