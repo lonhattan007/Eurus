@@ -32,8 +32,11 @@ const weeklyForecastSlice = createSlice({
 
 export const { updateWeeklyForecast } = weeklyForecastSlice.actions;
 
-export const selectWeeklyForecast = (state: RootState) => state.weeklyForecast.value;
-export const selectWeeklyForecastMaxTemp = (state: RootState) => state.weeklyForecast.maxTemp;
-export const selectWeeklyForecastMinTemp = (state: RootState) => state.weeklyForecast.minTemp;
+export const selectWeeklyForecast = (state: RootState) =>
+  state.weeklyForecast.value;
+export const selectWeeklyForecastMaxTemp = (state: RootState) =>
+  state.weeklyForecast.maxTemp;
+export const selectWeeklyForecastMinTemp = (state: RootState) =>
+  state.weeklyForecast.minTemp;
 
 export default weeklyForecastSlice.reducer;

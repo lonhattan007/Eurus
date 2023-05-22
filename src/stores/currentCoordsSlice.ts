@@ -26,6 +26,7 @@ const currentCoordsSlice = createSlice({
 export const { setCurrentCoords } = currentCoordsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCurrentCoords = (state: RootState) => state.currentCoords.value;
+export const selectCurrentCoords = (state: RootState) =>
+  state.currentCoords.value;
 
 export default currentCoordsSlice.reducer;

@@ -9,7 +9,9 @@ const MBAR_TO_ATM_RATIO = BAR_TO_ATM_RATIO / 1000;
  */
 function mbarToAtmosphere(airPressureMbar: number): number {
   if (airPressureMbar < 0) {
-    throw new Error('Invalid input for atmospheric pressure: pressure cannot be negative!');
+    throw new Error(
+      'Invalid input for atmospheric pressure: pressure cannot be negative!',
+    );
   }
 
   return airPressureMbar * MBAR_TO_ATM_RATIO;

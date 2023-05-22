@@ -2,7 +2,11 @@
 
 This is the continuation of a private Bootcamp Capstone project. The product aims to be a user-friendly weather forecast web application.
 
-# TODOs:
+This is a private and educational project to self-taught new technologies and apply better practices to the owner's software development workflow.
+
+---
+
+## TODOs:
 
 - Migrate from `MDB React` to `TailwindCSS`
 - Fetch APIs from third-party providers, currently `AccuWeather`
@@ -14,13 +18,17 @@ This is the continuation of a private Bootcamp Capstone project. The product aim
 - Apply CI/CDs and deploy the app
 - Convert the web app to a PWA
 
-# Prerequisites
+---
+
+## Bootstrap
+
+### Prerequisites
 
 - Node v16; it is recommended to install Node with [nvm](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-## Bootstrap
+### Run the project
 
 - Clone this project
 
@@ -31,7 +39,7 @@ This is the continuation of a private Bootcamp Capstone project. The product aim
   npm run dev
   ```
 
-# Tech
+---
 
 ## Tech stacks
 
@@ -42,6 +50,8 @@ This is the continuation of a private Bootcamp Capstone project. The product aim
 - [Redux](https://redux.js.org/introduction/getting-started): State management
 - [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
 - [Vitest](https://vitest.dev/guide/): Testing library
+
+---
 
 ## Project Structure (TBA)
 
@@ -108,3 +118,15 @@ Weather-Forecast-frontend/
 |__ LICENSE
 |__ README.md
 ```
+
+---
+
+## Development
+
+See [DEVELOPMENT.md](./docs/DEVELOPMENT.md)
+
+---
+
+## License
+
+This project has the [MIT License](./LICENSE).

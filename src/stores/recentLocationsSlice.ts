@@ -10,7 +10,8 @@ interface RecentLocationsState {
 
 // Define the initial state using that type
 const initialState: RecentLocationsState = {
-  value: localStorage.getItem('recentLocations')?.split(',') || DEFAULT_LOCATIONS,
+  value:
+    localStorage.getItem('recentLocations')?.split(',') || DEFAULT_LOCATIONS,
 };
 
 const recentLocationsSlice = createSlice({
@@ -30,7 +31,11 @@ const recentLocationsSlice = createSlice({
       // If the location is already in the array, move it to the top of the array
       // but do nothing if it's already the first element
       if (elemIndex > 0) {
-        state.value = [state.value[elemIndex], ...state.value.slice(0, elemIndex), ...state.value.slice(elemIndex + 1)];
+        state.value = [
+          state.value[elemIndex],
+          ...state.value.slice(0, elemIndex),
+          ...state.value.slice(elemIndex + 1),
+        ];
       }
 
       // Save the state to local storage
@@ -41,7 +46,11 @@ const recentLocationsSlice = createSlice({
       const elemIndex = state.value.indexOf(action.payload);
 
       // Move it to the top of the array
-      state.value = [state.value[elemIndex], ...state.value.slice(0, elemIndex), ...state.value.slice(elemIndex + 1)];
+      state.value = [
+        state.value[elemIndex],
+        ...state.value.slice(0, elemIndex),
+        ...state.value.slice(elemIndex + 1),
+      ];
 
       // Save the state to local storage
       localStorage.setItem('recentLocations', state.value.toString());
@@ -54,6 +63,7 @@ export { DEFAULT_LOCATIONS };
 export const { addLocation, rearrangeLocation } = recentLocationsSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectRecentLocations = (state: RootState) => state.recentLocations.value;
+export const selectRecentLocations = (state: RootState) =>
+  state.recentLocations.value;
 
 export default recentLocationsSlice.reducer;

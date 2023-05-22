@@ -1,4 +1,13 @@
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBIcon, MDBCol, MDBRow, MDBTable, MDBTableBody } from 'mdb-react-ui-kit';
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBIcon,
+  MDBCol,
+  MDBRow,
+  MDBTable,
+  MDBTableBody,
+} from 'mdb-react-ui-kit';
 
 import { useWeather } from '@hooks/useWeather';
 import { useAppDispatch } from '@hooks/customReduxHooks';

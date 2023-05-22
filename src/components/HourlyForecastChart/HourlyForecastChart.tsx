@@ -13,7 +13,15 @@ import { Line } from 'react-chartjs-2';
 import { useAppSelector } from '@hooks/customReduxHooks';
 import moment from 'moment';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const HourlyForecastChart = () => {
   const location = useAppSelector((state) => state.currentLocation.value);
@@ -22,7 +30,9 @@ const HourlyForecastChart = () => {
   const maxTemp = useAppSelector((state) => state.hourlyForecast.maxTemp);
   const minTemp = useAppSelector((state) => state.hourlyForecast.minTemp);
 
-  const labels = hourlyForecast.map((item) => moment(item.dateTime).format('hh A'));
+  const labels = hourlyForecast.map((item) =>
+    moment(item.dateTime).format('hh A'),
+  );
 
   const data = {
     labels,

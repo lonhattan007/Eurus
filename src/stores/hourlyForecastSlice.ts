@@ -31,8 +31,11 @@ const hourlyForecastSlice = createSlice({
 
 export const { updateHourlyForecast } = hourlyForecastSlice.actions;
 
-export const selectHourlyForecast = (state: RootState) => state.hourlyForecast.value;
-export const selectHourlyForecastMaxTemp = (state: RootState) => state.hourlyForecast.maxTemp;
-export const selectHourlyForecastMinTemp = (state: RootState) => state.hourlyForecast.minTemp;
+export const selectHourlyForecast = (state: RootState) =>
+  state.hourlyForecast.value;
+export const selectHourlyForecastMaxTemp = (state: RootState) =>
+  state.hourlyForecast.maxTemp;
+export const selectHourlyForecastMinTemp = (state: RootState) =>
+  state.hourlyForecast.minTemp;
 
 export default hourlyForecastSlice.reducer;
