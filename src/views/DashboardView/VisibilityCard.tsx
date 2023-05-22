@@ -13,7 +13,7 @@ const VisibilityCard = () => {
         </span>
       </MDBCardTitle>
       <MDBCardBody>
-        <div id='visibility-card-content' className='table-container rounded mx-5 p-3'>
+        <div id='visibility-card-content' className='p-3 mx-5 rounded table-container'>
           <MDBTable>
             <MDBTableBody>
               <tr>
