@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import VietnamLocations from 'src/constants/VietnamLocations';
+import VietnamLocations from '@constants/VietnamLocations';
 import { useState } from 'react';
 import { useAppDispatch } from '@hooks/customReduxHooks';
 import { addLocation } from '@stores/recentLocationsSlice';
