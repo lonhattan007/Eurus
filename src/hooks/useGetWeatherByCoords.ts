@@ -7,7 +7,10 @@ function useGetWeatherByCoords() {
   // Round the time interval within an hour
   const currentCoords = useAppSelector((state) => state.currentCoords.value);
   const startDateTime = moment().startOf('h').format('YYYY-MM-DDTHH:mm:ss');
-  const endDateTime = moment().add(1, 'h').startOf('h').format('YYYY-MM-DDTHH:mm:ss');
+  const endDateTime = moment()
+    .add(1, 'h')
+    .startOf('h')
+    .format('YYYY-MM-DDTHH:mm:ss');
 
   const [weather, setWeather] = useState({});
 

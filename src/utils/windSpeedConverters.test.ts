@@ -8,7 +8,9 @@ describe('Test converting wind speed KmH to Beaufort scale', () => {
 
       kmhToBeaufort(input);
     } catch (error: any) {
-      expect(error.message).toBe('Invalid input for wind speed: speed cannot be negative!');
+      expect(error.message).toBe(
+        'Invalid input for wind speed: speed cannot be negative!',
+      );
     }
   });
 
@@ -125,7 +127,9 @@ describe('Test converting wind speed in KmH to Mph', () => {
 
       kmhToMph(input);
     } catch (error: any) {
-      expect(error.message).toBe('Invalid input for wind speed: speed cannot be negative!');
+      expect(error.message).toBe(
+        'Invalid input for wind speed: speed cannot be negative!',
+      );
     }
   });
 
@@ -163,7 +167,9 @@ describe('Test converting wind speed in KmH to knots', () => {
 
       kmhToKnot(input);
     } catch (error: any) {
-      expect(error.message).toBe('Invalid input for wind speed: speed cannot be negative!');
+      expect(error.message).toBe(
+        'Invalid input for wind speed: speed cannot be negative!',
+      );
     }
   });
 

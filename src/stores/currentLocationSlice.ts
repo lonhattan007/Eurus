@@ -10,7 +10,9 @@ interface CurrentLocationState {
 // Define the initial state using that type
 const initialState: CurrentLocationState = {
   // First item in the `recentLocations` list
-  value: localStorage.getItem('recentLocations')?.split(',')[0] || DEFAULT_LOCATIONS[0],
+  value:
+    localStorage.getItem('recentLocations')?.split(',')[0] ||
+    DEFAULT_LOCATIONS[0],
 };
 
 const currentLocationSlice = createSlice({
@@ -27,6 +29,7 @@ const currentLocationSlice = createSlice({
 export const { updateLocation } = currentLocationSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCurrentLocations = (state: RootState) => state.currentLocation.value;
+export const selectCurrentLocations = (state: RootState) =>
+  state.currentLocation.value;
 
 export default currentLocationSlice.reducer;

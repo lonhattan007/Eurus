@@ -16,7 +16,9 @@ import { ForecastTypes, useForecast } from '@hooks/useForecast';
 
 const DashboardView = () => {
   // const currentCoords = useCurrentCoordinates();
-  const recentLocations = useAppSelector((state) => state.recentLocations.value);
+  const recentLocations = useAppSelector(
+    (state) => state.recentLocations.value,
+  );
 
   // if (currentCoords) {
   //   useGetWeatherByCoords()
@@ -28,7 +30,11 @@ const DashboardView = () => {
   return (
     <MDBContainer id='content-container'>
       <MDBRow id='content-row' className='flex-row-reverse'>
-        <MDBCol className='p-0 side-panel d-flex justify-content-center align-items-start' lg='3' md='4'>
+        <MDBCol
+          className='p-0 side-panel d-flex justify-content-center align-items-start'
+          lg='3'
+          md='4'
+        >
           <MDBContainer>
             <MDBRow className='my-3 justify-content-center'>
               <LocationSearchBar id='search-section' />
@@ -38,11 +44,16 @@ const DashboardView = () => {
             </MDBRow>
             <MDBRow className='my-3 justify-content-start text-align-left'>
               <h6 className='text'>
-                {localStorage.getItem('recentLocations') !== null ? 'Recently Viewed' : 'Other Locations'}
+                {localStorage.getItem('recentLocations') !== null
+                  ? 'Recently Viewed'
+                  : 'Other Locations'}
               </h6>
             </MDBRow>
             {recentLocations.slice(1).map((location) => (
-              <MDBRow key={location + '-summarized-info'} className='my-3 justify-content-center'>
+              <MDBRow
+                key={location + '-summarized-info'}
+                className='my-3 justify-content-center'
+              >
                 <SummarizedWeatherCard location={location} />
               </MDBRow>
             ))}

@@ -1,4 +1,12 @@
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBIcon, MDBTable, MDBTableBody, MDBTypography } from 'mdb-react-ui-kit';
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBIcon,
+  MDBTable,
+  MDBTableBody,
+  MDBTypography,
+} from 'mdb-react-ui-kit';
 import Greetings from '@components/Greetings';
 
 import { useWeather } from '@hooks/useWeather';

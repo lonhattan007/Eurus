@@ -27,6 +27,7 @@ const currentWeatherSlice = createSlice({
 export const { updateCurrentWeather } = currentWeatherSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCurrentWeather = (state: RootState) => state.currentWeather.value;
+export const selectCurrentWeather = (state: RootState) =>
+  state.currentWeather.value;
 
 export default currentWeatherSlice.reducer;

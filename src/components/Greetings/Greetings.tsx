@@ -29,7 +29,10 @@ const Greetings = (props: any) => {
 
   return (
     <div className={'mt-3 m-3 p-3 flex-column ' + props.className}>
-      <MDBTypography tag='div' className='display-3-lg display-4 text-primary fw-bold'>
+      <MDBTypography
+        tag='div'
+        className='display-3-lg display-4 text-primary fw-bold'
+      >
         {currentTime.toLocaleTimeString('en-US', {
           hour: '2-digit',
           minute: '2-digit',

@@ -20,7 +20,9 @@ const LocationSearchBar = (props: any) => {
       id={props.id}
       className='rounded'
       options={VietnamLocations}
-      value={VietnamLocations.find((option) => option.value === selectedLocation)}
+      value={VietnamLocations.find(
+        (option) => option.value === selectedLocation,
+      )}
       onChange={handleLocationChange}
       placeholder='Search a location'
     />

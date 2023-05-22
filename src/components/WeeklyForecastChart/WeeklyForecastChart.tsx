@@ -13,7 +13,15 @@ import { Line } from 'react-chartjs-2';
 import { useAppSelector } from '@hooks/customReduxHooks';
 import moment from 'moment';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+);
 
 const WeeklyForecastChart = () => {
   const location = useAppSelector((state) => state.currentLocation.value);
@@ -22,7 +30,9 @@ const WeeklyForecastChart = () => {
   const maxTemp = useAppSelector((state) => state.weeklyForecast.maxTemp);
   const minTemp = useAppSelector((state) => state.weeklyForecast.minTemp);
 
-  const labels = weeklyForecast.map((item, index) => moment(item.dateTime).add(index, 'd').format('DD/MM'));
+  const labels = weeklyForecast.map((item, index) =>
+    moment(item.dateTime).add(index, 'd').format('DD/MM'),
+  );
 
   const data = {
     labels,
