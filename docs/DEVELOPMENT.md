@@ -109,8 +109,10 @@ Weather-Forecast-frontend/
 |   |   
 |   |__ utils/..................... - utilities/helpers
 |   |   
-|   |__ main.tsx................... - main js entry
+|   |__ main.tsx................... - main app entry
 |   |   
+|__ docs/.......................... - documentations
+|__ |__ DEVELOPMENT.md ............ - Development guides and conventions
 |__ mocks/......................... - mock data
 |__ |__ entityX/
 |__ |   |__ entityXData.ts
@@ -122,7 +124,6 @@ Weather-Forecast-frontend/
 |__ tailwind.config.js............. - Tailwind and styling config
 |__ vite.config.js................. - Vite config
 |__ ... (other config files)
-|__ DEVELOPMENT.md ................ - Development guides and conventions
 |__ LICENSE
 |__ README.md
 ```
