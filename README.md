@@ -38,9 +38,7 @@ This is the continuation of a private Bootcamp Capstone project. The product aim
 - `Node 16 & npm`: Runtime & package manager
 - `Vite`: Module bundler
 - [React](https://reactjs.org/docs/getting-started.html): Core UI library
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) & [Reactstrap](https://reactstrap.github.io/?path=/story/home-installation--page): styling and components library
-- [MDB](https://mdbootstrap.com/docs/react/): UI kit
-- [SASS](https://sass-lang.com/documentation/): CSS preprocessor
+- [Tailwind CSS](https://tailwindcss.com/docs/installation): Styling library
 - [Redux](https://redux.js.org/introduction/getting-started): State management
 - [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
 - [Vitest](https://vitest.dev/guide/): Testing library
@@ -56,7 +54,6 @@ Weather-Forecast-frontend/
 |   |   |__ componentsA/
 |   |   |   |__ ComponentA.tsx
 |   |   |   |__ ComponentA.test.ts
-|   |   |   |__ ComponentA.scss
 |   |   |   |__ SubComponentB.tsx
 |   |   |   |__ ...
 |   |   |   |__ index.ts........... - exporting modules
@@ -77,10 +74,6 @@ Weather-Forecast-frontend/
 |   |__ routes/.................... - routes
 |   |   |__ router.ts ............. - router config
 |   |   
-|   |__ scss....................... - styling
-|   |   |__ styles.scss............ - global styling
-|   |   |__ theme.scss............. - theming variables
-|   |   
 |   |__ stores/.................... - state management store and slices
 |   |   |__  store.ts.............. - the whole project's store
 |   |   |__  itemASlice.ts.........
@@ -91,7 +84,6 @@ Weather-Forecast-frontend/
 |   |   |__ ViewA/
 |   |   |   |__ ViewA.tsx
 |   |   |   |__ ViewA.test.ts
-|   |   |   |__ ViewA.scss
 |   |   |   |__ SubComponentB.tsx
 |   |   |   |__ ...
 |   |   |   |__ index.ts........... - exporting modules

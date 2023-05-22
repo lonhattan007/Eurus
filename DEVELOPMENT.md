@@ -56,9 +56,7 @@
 - `Node 16 & npm`: Runtime & package manager
 - `Vite`: Module bundler
 - [React](https://reactjs.org/docs/getting-started.html): Core UI library
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) & [Reactstrap](https://reactstrap.github.io/?path=/story/home-installation--page): styling and components library
-- [MDB](https://mdbootstrap.com/docs/react/): UI kit
-- [SASS](https://sass-lang.com/documentation/): CSS preprocessor
+- [Tailwind CSS](https://tailwindcss.com/docs/installation): Styling library
 - [Redux](https://redux.js.org/introduction/getting-started): State management
 - [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
 - [Vitest](https://vitest.dev/guide/): Testing library
@@ -67,72 +65,66 @@
 
 ```markdown
 Weather-Forecast-frontend/
-|** src/
-| |** assets/.................... - dynamic assets
-| |  
-| |** components/................ - shared components
-| | |** componentsA/
-| | | |** ComponentA.tsx
-| | | |** ComponentA.test.ts
-| | | |** ComponentA.scss
-| | | |** SubComponentB.tsx
-| | | |** ...
-| | | |** index.ts........... - exporting modules
-| | |** ...
-| |  
-| |** constants/................. - constants used throughout the project
-| | |** ConstantA.ts ..........
-| | |** ConstantB.ts ..........
-| | |** ...
-| |  
-| |** hooks/..................... - custom hooks
-| | |** useHookA.ts ...........
-| | |** useHookB.ts ...........
-| | |** ...
-| |  
-| |** models/.................... - types and interfaces (still working on it)
-| |  
-| |** routes/.................... - routes
-| | |** router.ts ............. - router config
-| |  
-| |** scss....................... - styling
-| | |** styles.scss............ - global styling
-| | |** theme.scss............. - theming variables
-| |  
-| |** stores/.................... - state management store and slices
-| | |** store.ts.............. - the whole project's store
-| | |** itemASlice.ts.........
-| | |** itemBSlice.ts.........
-| | |** ...
-| |  
-| |** views/..................... - page-level components
-| | |** ViewA/
-| | | |** ViewA.tsx
-| | | |** ViewA.test.ts
-| | | |** ViewA.scss
-| | | |** SubComponentB.tsx
-| | | |** ...
-| | | |** index.ts........... - exporting modules
-| | |** ...
-| |  
-| |** utils/..................... - utilities/helpers
-| |  
-| |** main.tsx................... - main js entry
-| |  
-|** mocks/......................... - mock data
-|** |** entityX/
-|** | |** entityXData.ts
-|** |** ...
-|** tests/......................... - testing setup
-|** public/........................ - public assets
-|** index.html..................... - HTML entry
-|** postcss.config.js.............. - Postcss config
-|** tailwind.config.js............. - Tailwind and styling config
-|** vite.config.js................. - Vite config
-|** ... (other config files)
-|** DEVELOPMENT.md ................ - Development guides and conventions
-|** LICENSE
-|** README.md
+|__ src/
+|   |__ assets/.................... - dynamic assets
+|   |   
+|   |__ components/................ - shared components
+|   |   |__ componentsA/
+|   |   |   |__ ComponentA.tsx
+|   |   |   |__ ComponentA.test.ts
+|   |   |   |__ SubComponentB.tsx
+|   |   |   |__ ...
+|   |   |   |__ index.ts........... - exporting modules
+|   |   |__ ...
+|   |   
+|   |__ constants/................. - constants used throughout the project
+|   |   |__ ConstantA.ts ..........
+|   |   |__ ConstantB.ts ..........
+|   |   |__ ...
+|   |   
+|   |__ hooks/..................... - custom hooks
+|   |   |__ useHookA.ts ...........
+|   |   |__ useHookB.ts ...........
+|   |   |__ ...
+|   |   
+|   |__ models/.................... - types and interfaces (still working on it)
+|   |   
+|   |__ routes/.................... - routes
+|   |   |__ router.ts ............. - router config
+|   |   
+|   |__ stores/.................... - state management store and slices
+|   |   |__  store.ts.............. - the whole project's store
+|   |   |__  itemASlice.ts.........
+|   |   |__  itemBSlice.ts.........
+|   |   |__  ...
+|   |   
+|   |__ views/..................... - page-level components
+|   |   |__ ViewA/
+|   |   |   |__ ViewA.tsx
+|   |   |   |__ ViewA.test.ts
+|   |   |   |__ SubComponentB.tsx
+|   |   |   |__ ...
+|   |   |   |__ index.ts........... - exporting modules
+|   |   |__ ...
+|   |   
+|   |__ utils/..................... - utilities/helpers
+|   |   
+|   |__ main.tsx................... - main js entry
+|   |   
+|__ mocks/......................... - mock data
+|__ |__ entityX/
+|__ |   |__ entityXData.ts
+|__ |__ ...
+|__ tests/......................... - testing setup
+|__ public/........................ - public assets
+|__ index.html..................... - HTML entry
+|__ postcss.config.js.............. - Postcss config
+|__ tailwind.config.js............. - Tailwind and styling config
+|__ vite.config.js................. - Vite config
+|__ ... (other config files)
+|__ DEVELOPMENT.md ................ - Development guides and conventions
+|__ LICENSE
+|__ README.md
 ```
 
 ## Conventions
