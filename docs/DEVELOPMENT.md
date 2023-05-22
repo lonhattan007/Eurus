@@ -1,12 +1,16 @@
-# Development of the Eurus
+# Development Guides for Eurus
 
-# Prerequisites
+This is the development guideline for the Eurus project.
+
+## Bootstrap
+
+### Prerequisites
 
 - Node v16; it is recommended to install Node with [nvm](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-## Bootstrap
+### Run the project
 
 - Clone this project
 
@@ -17,7 +21,21 @@
   npm run dev
   ```
 
-# Workflow
+---
+
+## Tech stacks
+
+- `Node 16 & npm`: Runtime & package manager
+- `Vite`: Module bundler
+- [React](https://reactjs.org/docs/getting-started.html): Core UI library
+- [Tailwind CSS](https://tailwindcss.com/docs/installation): Styling library
+- [Redux](https://redux.js.org/introduction/getting-started): State management
+- [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
+- [Vitest](https://vitest.dev/guide/): Testing library
+
+---
+
+## Workflow
 
 - To work on a new feature, checkout a new branch from the `main` branch on your local machine:
 
@@ -30,7 +48,7 @@
 - Before committing, always reformat and check linting rules:
 
   ```bash
-  npx prettier --write .
+  npm run format
   npm run lint
 
   ```
@@ -49,17 +67,7 @@
 
 - **NEVER PUSH TO THE MAIN BRANCH**
 
-# Tech
-
-## Tech stacks
-
-- `Node 16 & npm`: Runtime & package manager
-- `Vite`: Module bundler
-- [React](https://reactjs.org/docs/getting-started.html): Core UI library
-- [Tailwind CSS](https://tailwindcss.com/docs/installation): Styling library
-- [Redux](https://redux.js.org/introduction/getting-started): State management
-- [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
-- [Vitest](https://vitest.dev/guide/): Testing library
+---
 
 ## Project Structure (TBA)
 
@@ -127,6 +135,8 @@ Weather-Forecast-frontend/
 |__ LICENSE
 |__ README.md
 ```
+
+---
 
 ## Conventions
 
@@ -208,4 +218,8 @@ Weather-Forecast-frontend/
 
 - TBA.
 
+---
+
 ## Environment Variables
+
+- TBA.
