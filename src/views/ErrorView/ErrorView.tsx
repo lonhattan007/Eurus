@@ -11,9 +11,7 @@ const ErrorView = () => {
   }, [error]);
 
   return (
-    <div
-      className='container d-flex flex-column justify-content-center align-items-center'
-    >
+    <div className='container d-flex flex-column justify-content-center align-items-center'>
       <h1 className='m-3'>Oops!</h1>
       <h3 className='m-3'>Sorry, an unexpected error has occurred.</h3>
       <p className='font-italic'>
