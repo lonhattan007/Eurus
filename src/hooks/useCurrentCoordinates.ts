@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from './customReduxHooks';
 import { useGetWeatherByCoords } from './useGetWeatherByCoords';
 import { setCurrentCoords } from '@stores/currentCoordsSlice';
+import axios from 'axios';
+import moment from 'moment';
 
 // The maximum age in milliseconds of a possible cached position that is acceptable to return
 // Currently set to 1 hour
@@ -19,10 +21,28 @@ function useCurrentCoordinates() {
     const success = (position: any) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      // const startDateTime = moment().startOf('h').format('YYYY-MM-DDTHH:mm:ss');
+      // const endDateTime = moment().add(1, 'h').startOf('h').format('YYYY-MM-DDTHH:mm:ss');
+
       const payload = { latitude, longitude };
-      console.log('Geolocation detected');
+
+      const params = {
+        latitude,
+        longitude,
+        format: 'jsonv2',
+      };
+
       localStorage.setItem('currentCoordinates', `${latitude},${longitude}`);
       dispatch(setCurrentCoords(payload));
+
+      axios
+        .get(`https://nominatim.openstreetmap.org/reverse`, { params })
+        .then((res) => {})
+        .catch((err: any) => {
+          console.log(err.message);
+        });
+
+      console.log('Geolocation detected');
     };
 
     const error = (err: any) => {

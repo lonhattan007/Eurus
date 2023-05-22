@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import VietNamProvinces from '@mocks/VietNamProvinces';
+import VietnamLocations from '@constants/VietnamLocations';
 import { useState } from 'react';
 import { useAppDispatch } from '@hooks/customReduxHooks';
 import { addLocation } from '@stores/recentLocationsSlice';
@@ -19,8 +19,8 @@ const LocationSearchBar = (props: any) => {
     <Select
       id={props.id}
       className='rounded'
-      options={VietNamProvinces}
-      value={VietNamProvinces.find((option) => option.value === selectedLocation)}
+      options={VietnamLocations}
+      value={VietnamLocations.find((option) => option.value === selectedLocation)}
       onChange={handleLocationChange}
       placeholder='Search a location'
     />

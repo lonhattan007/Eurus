@@ -13,6 +13,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@mocks/*": ["./mocks/*"],
       "@models/*": ["./src/models/*"],
+      "@constants/*": ["./src/constants/*"],
       "@styles/*": ["./src/scss/*"],
       "@stores/*": ["./src/stores/*"],
       "@routes/*": ["./src/routes/*"],

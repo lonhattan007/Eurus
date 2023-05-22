@@ -1,4 +1,4 @@
-const VietNamProvinces = [
+const VietnamLocations = [
   { value: 'Ha Noi', label: 'Hà Nội' },
   { value: 'Ho Chi Minh', label: 'Hồ Chí Minh' },
   { value: 'Da Nang', label: 'Đà Nẵng' },
@@ -17,10 +17,8 @@ const VietNamProvinces = [
   { value: 'Binh Thuan', label: 'Bình Thuận' },
   { value: 'Ca Mau', label: 'Cà Mau' },
   { value: 'Cao Bang', label: 'Cao Bằng' },
-  // { value: 'Dak Lak', label: 'Đắk Lắk' },
-  // { value: 'Dak Nong', label: 'Đắk Nông' },
-  { value: 'Dac Lac', label: 'Đắk Lắk' },
-  { value: 'Dac Nong', label: 'Đắk Nông' },
+  { value: 'Dak Lak', label: 'Đắk Lắk' },
+  { value: 'Dak Nong', label: 'Đắk Nông' },
   { value: 'Dien Bien', label: 'Điện Biên' },
   { value: 'Dong Nai', label: 'Đồng Nai' },
   { value: 'Dong Thap', label: 'Đồng Tháp' },
@@ -65,4 +63,4 @@ const VietNamProvinces = [
   { value: 'Yen Bai', label: 'Yên Bái' },
 ];
 
-export default VietNamProvinces;
+export default VietnamLocations;
