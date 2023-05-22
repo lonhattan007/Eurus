@@ -28,27 +28,27 @@ const DashboardView = () => {
   return (
     <MDBContainer id='content-container'>
       <MDBRow id='content-row' className='flex-row-reverse'>
-        <MDBCol className='side-panel p-0 d-flex justify-content-center align-items-start' lg='3' md='4'>
+        <MDBCol className='p-0 side-panel d-flex justify-content-center align-items-start' lg='3' md='4'>
           <MDBContainer>
-            <MDBRow className='justify-content-center my-3'>
+            <MDBRow className='my-3 justify-content-center'>
               <LocationSearchBar id='search-section' />
             </MDBRow>
-            <MDBRow className='justify-content-center my-3'>
+            <MDBRow className='my-3 justify-content-center'>
               <DetailedWeatherCard />
             </MDBRow>
-            <MDBRow className='justify-content-start text-align-left my-3'>
+            <MDBRow className='my-3 justify-content-start text-align-left'>
               <h6 className='text'>
                 {localStorage.getItem('recentLocations') !== null ? 'Recently Viewed' : 'Other Locations'}
               </h6>
             </MDBRow>
             {recentLocations.slice(1).map((location) => (
-              <MDBRow key={location + '-summarized-info'} className='justify-content-center my-3'>
+              <MDBRow key={location + '-summarized-info'} className='my-3 justify-content-center'>
                 <SummarizedWeatherCard location={location} />
               </MDBRow>
             ))}
           </MDBContainer>
         </MDBCol>
-        <MDBCol className='detail-board p-0' lg='9' md='8'>
+        <MDBCol className='p-0 detail-board' lg='9' md='8'>
           <Greetings className='d-none d-md-flex align-items-start' />
           <MDBRow className='mx-3'>
             <DashboardViewTabs />
