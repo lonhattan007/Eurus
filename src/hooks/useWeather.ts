@@ -19,15 +19,15 @@ function useWeather(location: string) {
       endDateTime: endDateTime,
     };
 
-    axios
-      .get('/weathers/location-name', { params: params })
-      .then((res) => {
-        const weatherReports = JSON.parse(res.request.response);
-        setWeather({ ...weatherReports[0] });
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
+    // axios
+    //   .get('/weathers/location-name', { params: params })
+    //   .then((res) => {
+    //     const weatherReports = JSON.parse(res.request.response);
+    //     setWeather({ ...weatherReports[0] });
+    //   })
+    //   .catch((err) => {
+    //     console.error(err.message);
+    //   });
   }, [location]);
 
   return weather;

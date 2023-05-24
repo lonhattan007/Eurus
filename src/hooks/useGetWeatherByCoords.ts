@@ -22,15 +22,15 @@ function useGetWeatherByCoords() {
       endDateTime: endDateTime,
     };
 
-    axios
-      .get('/weathers', { params: params })
-      .then((res) => {
-        const weatherReports = JSON.parse(res.request.response);
-        setWeather({ ...weatherReports[0] });
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
+    // axios
+    //   .get('/weathers', { params: params })
+    //   .then((res) => {
+    //     const weatherReports = JSON.parse(res.request.response);
+    //     setWeather({ ...weatherReports[0] });
+    //   })
+    //   .catch((err) => {
+    //     console.error(err.message);
+    //   });
   }, [currentCoords]);
 
   return weather;

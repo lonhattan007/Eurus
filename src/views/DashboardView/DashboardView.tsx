@@ -6,16 +6,16 @@ import SummarizedWeatherCard from '@components/SummarizedWeatherCard/SummarizedW
 import { DashboardViewTabs } from './DashboardViewTabs';
 
 // import { useEffect } from 'react';
-// import { useCurrentCoordinates } from '@hooks/useCurrentCoordinates';
+import { useCurrentCoordinates } from '@hooks/useCurrentCoordinates';
 import { useAppSelector } from '@hooks/customReduxHooks';
 
 import './DashboardView.scss';
-import { ForecastTypes, useForecast } from '@hooks/useForecast';
+// import { ForecastTypes, useForecast } from '@hooks/useForecast';
 // import { useGetWeatherByCoords } from '@hooks/useGetWeatherByCoords';
 // import { useGetWeatherByCoords } from '@hooks/useGetWeatherByCoords';
 
 const DashboardView = () => {
-  // const currentCoords = useCurrentCoordinates();
+  useCurrentCoordinates();
   const recentLocations = useAppSelector(
     (state) => state.recentLocations.value,
   );
@@ -24,8 +24,8 @@ const DashboardView = () => {
   //   useGetWeatherByCoords()
   // }
 
-  useForecast(ForecastTypes.weekly);
-  useForecast(ForecastTypes.hourly);
+  // useForecast(ForecastTypes.weekly);
+  // useForecast(ForecastTypes.hourly);
 
   return (
     <MDBContainer id='content-container'>
