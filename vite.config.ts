@@ -16,7 +16,7 @@ export default defineConfig({
       '@mocks': path.resolve('./mocks/'),
       '@models': path.resolve('./src/models/'),
       '@constants': path.resolve('./src/constants/'),
-      '@styles': path.resolve('./src/scss'),
+      '@styles': path.resolve('./src/styles'),
       '@stores': path.resolve('./src/stores'),
       '@routes': path.resolve('./src/routes'),
       '@utils': path.resolve('./src/utils'),

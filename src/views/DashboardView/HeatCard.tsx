@@ -1,18 +1,18 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
 import {
-  MDBCard,
   MDBCardBody,
   MDBCardTitle,
   MDBIcon,
   MDBTable,
   MDBTableBody,
 } from 'mdb-react-ui-kit';
+import Card from '@components/Card/Card';
 
 const HeatCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <MDBCard className='info-card'>
+    <Card className='info-card'>
       <MDBCardTitle className='text-primary'>
         <span>
           <MDBIcon className='px-1' icon='thermometer-half' />
@@ -62,7 +62,7 @@ const HeatCard = () => {
           </MDBTable>
         </div>
       </MDBCardBody>
-    </MDBCard>
+    </Card>
   );
 };
 

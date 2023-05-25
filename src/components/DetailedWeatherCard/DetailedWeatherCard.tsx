@@ -1,12 +1,6 @@
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBIcon,
-  MDBTable,
-  MDBTableBody,
-  MDBTypography,
-} from 'mdb-react-ui-kit';
+import { MDBIcon, MDBTypography } from 'mdb-react-ui-kit';
+
+import Card from '@components/Card';
 import Greetings from '@components/Greetings';
 
 import { useWeather } from '@hooks/useWeather';
@@ -30,14 +24,14 @@ const DetailedWeatherCard = () => {
   }, [weather]);
 
   return (
-    <MDBCard className='current-card'>
+    <Card className='mb-3.5 w-4/5 card current-card'>
       <Greetings className='d-flex d-md-none' />
-      <MDBCardTitle className='mt-3 fs-4'>
+      <div className='mt-3 mb-1 text-2xl'>
         <MDBIcon icon='map-marker-alt' size='xs' />
         {/* TODO: This is just a patch, removed when DB is more concise */}
         <span className=''>{' ' + fixLocationName(location)}</span>
-      </MDBCardTitle>
-      <MDBCardBody className='d-flex flex-column justify-content-evenly'>
+      </div>
+      <div className='flex-auto p-6 d-flex flex-column justify-content-evenly'>
         <div>
           <MDBTypography tag='div' className='fw-bold display-md-3 display-4'>
             {weather.tempC ?? ''}&deg;C
@@ -49,8 +43,8 @@ const DetailedWeatherCard = () => {
             {weather.weatherStatus ?? ''}
           </MDBTypography>
         </div>
-        <MDBTable>
-          <MDBTableBody>
+        <table className='p-0 m-0 font-medium bg-transparent border-collapse'>
+          <tbody>
             <tr>
               <th scope='row' className='text-start'>
                 <MDBIcon icon='wind' size='sm' />
@@ -74,10 +68,10 @@ const DetailedWeatherCard = () => {
               <td className='text-start'>Air pressure</td>
               <td className='text-end'>{`${weather.pressure ?? ''} mbar`}</td>
             </tr>
-          </MDBTableBody>
-        </MDBTable>
-      </MDBCardBody>
-    </MDBCard>
+          </tbody>
+        </table>
+      </div>
+    </Card>
   );
 };
 

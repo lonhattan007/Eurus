@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import '@styles/styles.scss';
+import '@styles/styles.css';
 import 'mdb-react-ui-kit/dist/css/mdb.dark.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 

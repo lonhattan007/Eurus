@@ -2,17 +2,9 @@ import React from 'react';
 import { useWeather } from '@hooks/useWeather';
 import { useAppDispatch } from '@hooks/customReduxHooks';
 
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBIcon,
-  MDBCol,
-  MDBRow,
-  MDBTable,
-  MDBTableBody,
-} from 'mdb-react-ui-kit';
+import { MDBCardTitle, MDBIcon, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 
+import Card from '@components/Card';
 import { rearrangeLocation } from '@stores/recentLocationsSlice';
 import { updateLocation } from '@stores/currentLocationSlice';
 
@@ -35,7 +27,7 @@ const SummarizedWeatherCard = (props: any) => {
   };
 
   return (
-    <MDBCard className='other-card' onClick={handleClick}>
+    <Card className='other-card' onClick={handleClick}>
       <MDBCardTitle className='flex-row-reverse mt-2 d-flex fs-5'>
         <span>
           <MDBIcon icon='map-marker-alt' size='xs' />
@@ -43,11 +35,11 @@ const SummarizedWeatherCard = (props: any) => {
           {' ' + fixLocationName(props.location)}
         </span>
       </MDBCardTitle>
-      <MDBCardBody className='p-0 pb-3'>
+      <div className='flex-auto p-0 pb-3'>
         <MDBRow className='p-0 m-0'>
           <MDBCol className='p-0 d-flex flex-column-reverse align-items-start'>
-            <MDBTable borderless>
-              <MDBTableBody>
+            <table className='p-0 m-0 text-sm bg-transparent border-collapse'>
+              <tbody>
                 <tr>
                   <th scope='row'>
                     <MDBIcon icon='wind' size='sm' />
@@ -68,15 +60,15 @@ const SummarizedWeatherCard = (props: any) => {
                     weather.humidity ?? ''
                   } %`}</td>
                 </tr>
-              </MDBTableBody>
-            </MDBTable>
+              </tbody>
+            </table>
           </MDBCol>
           <MDBCol className='p-0 d-flex flex-column-reverse align-items-end'>
             <span className='fw-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
           </MDBCol>
         </MDBRow>
-      </MDBCardBody>
-    </MDBCard>
+      </div>
+    </Card>
   );
 };
 
