@@ -6,7 +6,7 @@ import SummarizedWeatherCard from '@components/SummarizedWeatherCard/SummarizedW
 import { DashboardViewTabs } from './DashboardViewTabs';
 
 // import { useEffect } from 'react';
-import { useCurrentCoordinates } from '@hooks/useCurrentCoordinates';
+import { useGetCurrentCoordinates } from '@hooks/useCurrentCoordinates';
 import { useAppSelector } from '@hooks/customReduxHooks';
 
 import './DashboardView.scss';
@@ -15,7 +15,7 @@ import './DashboardView.scss';
 // import { useGetWeatherByCoords } from '@hooks/useGetWeatherByCoords';
 
 const DashboardView = () => {
-  useCurrentCoordinates();
+  useGetCurrentCoordinates();
   const recentLocations = useAppSelector(
     (state) => state.recentLocations.value,
   );

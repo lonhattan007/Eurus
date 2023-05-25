@@ -31,7 +31,7 @@ const RainCard = () => {
                   Precipitation
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.precipitationMm} mm{' '}
+                  {currentWeather.precipitationMm ?? ''} mm
                 </th>
               </tr>
               <tr>
@@ -39,7 +39,7 @@ const RainCard = () => {
                   Snow fall
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.totalSnowCm} cm
+                  {currentWeather.totalSnowCm ?? ''} cm
                 </th>
               </tr>
               <tr>
@@ -47,7 +47,7 @@ const RainCard = () => {
                   Dew point
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.dewPointC} &deg;C
+                  {currentWeather.dewPointC ?? ''} &deg;C
                 </th>
               </tr>
             </MDBTableBody>

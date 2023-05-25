@@ -31,7 +31,7 @@ const HeatCard = () => {
                   Maximum temperature
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.maxTempC} &deg;C{' '}
+                  {currentWeather.maxTempC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
@@ -39,7 +39,7 @@ const HeatCard = () => {
                   Minimum temperature
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.minTempC} &deg;C
+                  {currentWeather.minTempC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
@@ -47,7 +47,7 @@ const HeatCard = () => {
                   Heat index
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.heatIndexC} &deg;C
+                  {currentWeather.heatIndexC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
@@ -55,7 +55,7 @@ const HeatCard = () => {
                   Wind chill
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.windChillC} &deg;C
+                  {currentWeather.windChillC ?? ''} &deg;C
                 </th>
               </tr>
             </MDBTableBody>

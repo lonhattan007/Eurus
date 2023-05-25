@@ -30,7 +30,7 @@ const WindCard = () => {
                   Wind speed{' '}
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.windSpeedKmph} Km/h{' '}
+                  {currentWeather.windSpeedKmph ?? ''} Km/h
                 </th>
               </tr>
               <tr>
@@ -38,7 +38,7 @@ const WindCard = () => {
                   Wind gust{' '}
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.windGustKmph} Km/h
+                  {currentWeather.windGustKmph ?? ''} Km/h
                 </th>
               </tr>
               <tr className='h-25'>

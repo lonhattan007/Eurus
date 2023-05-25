@@ -9,7 +9,7 @@ This is a personal and educational project to self-taught new technologies and a
 ## TODOs:
 
 - Migrate from `MDB React` to `TailwindCSS`
-- Fetch APIs from third-party providers, currently `AccuWeather`
+- Fetch APIs from third-party providers, currently `OpenWeather`
 	- Better and more concise data
 - Add some enhancements on UI/UX:
 	- Localization

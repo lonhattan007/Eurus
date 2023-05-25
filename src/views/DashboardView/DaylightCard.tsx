@@ -31,7 +31,7 @@ const DaylightCard = () => {
                   UV index
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.uvIndex}
+                  {currentWeather.uvIndex ?? ''}
                 </th>
               </tr>
               <tr>
@@ -39,7 +39,7 @@ const DaylightCard = () => {
                   Sun hour
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.sunHour} hr
+                  {currentWeather.sunHour ?? ''} hr
                 </th>
               </tr>
               <tr>
@@ -47,7 +47,7 @@ const DaylightCard = () => {
                   Sunset
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.sunset}
+                  {currentWeather.sunset ?? ''}
                 </th>
               </tr>
               <tr>
@@ -55,7 +55,7 @@ const DaylightCard = () => {
                   Sunset
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.sunset}
+                  {currentWeather.sunset ?? ''}
                 </th>
               </tr>
               <tr>
@@ -63,7 +63,7 @@ const DaylightCard = () => {
                   Moon illumination
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.sunHour} %
+                  {currentWeather.sunHour ?? ''} %
                 </th>
               </tr>
               <tr>
@@ -71,7 +71,7 @@ const DaylightCard = () => {
                   Moonrise
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.moonrise}
+                  {currentWeather.moonrise ?? ''}
                 </th>
               </tr>
               <tr>
@@ -79,7 +79,7 @@ const DaylightCard = () => {
                   Moonset
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.moonset}
+                  {currentWeather.moonset ?? ''}
                 </th>
               </tr>
             </MDBTableBody>

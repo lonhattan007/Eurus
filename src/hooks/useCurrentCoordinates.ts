@@ -13,7 +13,7 @@ const MAX_AGE = 1000 * 60 * 60;
 // Currently set to 15 seconds
 const GET_COORDS_TIME_OUT = 60000;
 
-function useCurrentCoordinates() {
+function useGetCurrentCoordinates() {
   useEffect(() => {
     // If a position is found, save its coordinates to local storage
     const success: PositionCallback = (position: GeolocationPosition) => {
@@ -27,10 +27,9 @@ function useCurrentCoordinates() {
       };
 
       axios
-        .get(`/reverse`, {
-          baseURL: 'https://nominatim.openstreetmap.org',
+        .get('', {
+          baseURL: import.meta.env.VITE_GEOCODING_URL,
           params,
-          // headers: OSM_HEADERS,
         })
         .then((res: AxiosResponse) => {
           console.log(res.data.address);
@@ -58,4 +57,4 @@ function useCurrentCoordinates() {
   }, []);
 }
 
-export { useCurrentCoordinates };
+export { useGetCurrentCoordinates };

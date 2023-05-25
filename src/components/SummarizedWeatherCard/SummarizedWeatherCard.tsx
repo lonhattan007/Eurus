@@ -1,3 +1,7 @@
+import React from 'react';
+import { useWeather } from '@hooks/useWeather';
+import { useAppDispatch } from '@hooks/customReduxHooks';
+
 import {
   MDBCard,
   MDBCardBody,
@@ -8,9 +12,6 @@ import {
   MDBTable,
   MDBTableBody,
 } from 'mdb-react-ui-kit';
-
-import { useWeather } from '@hooks/useWeather';
-import { useAppDispatch } from '@hooks/customReduxHooks';
 
 import { rearrangeLocation } from '@stores/recentLocationsSlice';
 import { updateLocation } from '@stores/currentLocationSlice';
@@ -24,7 +25,9 @@ const SummarizedWeatherCard = (props: any) => {
   const dispatch = useAppDispatch();
   const weather: Weather = useWeather(props.location);
 
-  const handleClick = (e: any) => {
+  const handleClick: React.MouseEventHandler<HTMLElement> = (
+    e: React.MouseEvent<HTMLElement>,
+  ) => {
     e.preventDefault();
 
     dispatch(rearrangeLocation(props.location));
@@ -51,7 +54,9 @@ const SummarizedWeatherCard = (props: any) => {
                   </th>
                   <td>Wind</td>
                   <td className='px-2'>|</td>
-                  <td className='text-start'>{`${weather.windSpeedKmph} Km/h`}</td>
+                  <td className='text-start'>{`${
+                    weather.windSpeedKmph ?? ''
+                  } Km/h`}</td>
                 </tr>
                 <tr>
                   <th scope='row'>
@@ -59,13 +64,15 @@ const SummarizedWeatherCard = (props: any) => {
                   </th>
                   <td>Hum</td>
                   <td className='px-2'>|</td>
-                  <td className='text-start'>{`${weather.humidity} %`}</td>
+                  <td className='text-start'>{`${
+                    weather.humidity ?? ''
+                  } %`}</td>
                 </tr>
               </MDBTableBody>
             </MDBTable>
           </MDBCol>
           <MDBCol className='p-0 d-flex flex-column-reverse align-items-end'>
-            <span className='fw-bold fs-5'>{weather.tempC}&deg;C</span>
+            <span className='fw-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
           </MDBCol>
         </MDBRow>
       </MDBCardBody>

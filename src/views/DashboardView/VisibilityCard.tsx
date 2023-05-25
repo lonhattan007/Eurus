@@ -35,7 +35,7 @@ const VisibilityCard = () => {
                   Visibility
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.visibility} Km{' '}
+                  {currentWeather.visibility ?? ''} Km
                 </th>
               </tr>
               <tr>
@@ -43,7 +43,7 @@ const VisibilityCard = () => {
                   Cloud cover
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.cloudCover} %
+                  {currentWeather.cloudCover ?? ''} %
                 </th>
               </tr>
             </MDBTableBody>

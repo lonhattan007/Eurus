@@ -21,10 +21,10 @@ const weeklyForecastSlice = createSlice({
     updateWeeklyForecast: (state, action) => {
       state.value = action.payload;
 
-      const maxTemps = state.value.map((item) => item.maxTempC!);
+      const maxTemps = state.value.map((item) => item.maxTempC ?? 0);
       state.maxTemp = Math.max(...maxTemps);
 
-      const minTemps = state.value.map((item) => item.minTempC!);
+      const minTemps = state.value.map((item) => item.minTempC ?? 0);
       state.minTemp = Math.min(...minTemps);
     },
   },
