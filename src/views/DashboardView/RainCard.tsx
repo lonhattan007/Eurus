@@ -1,11 +1,5 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import {
-  MDBCardBody,
-  MDBCardTitle,
-  MDBIcon,
-  MDBTable,
-  MDBTableBody,
-} from 'mdb-react-ui-kit';
+import { MDBCardBody, MDBCardTitle, MDBIcon } from 'mdb-react-ui-kit';
 import Card from '@components/Card/Card';
 
 const RainCard = () => {
@@ -24,8 +18,8 @@ const RainCard = () => {
           id='rain-card-content'
           className='p-3 mx-5 rounded table-container'
         >
-          <MDBTable>
-            <MDBTableBody>
+          <table>
+            <tbody>
               <tr>
                 <th scope='row' className='text-start'>
                   Precipitation
@@ -50,8 +44,8 @@ const RainCard = () => {
                   {currentWeather.dewPointC ?? ''} &deg;C
                 </th>
               </tr>
-            </MDBTableBody>
-          </MDBTable>
+            </tbody>
+          </table>
         </div>
       </MDBCardBody>
     </Card>

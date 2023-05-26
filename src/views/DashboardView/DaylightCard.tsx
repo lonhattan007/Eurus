@@ -1,11 +1,5 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import {
-  MDBCardBody,
-  MDBCardTitle,
-  MDBIcon,
-  MDBTable,
-  MDBTableBody,
-} from 'mdb-react-ui-kit';
+import { MDBCardBody, MDBCardTitle, MDBIcon } from 'mdb-react-ui-kit';
 import Card from '@components/Card/Card';
 
 const DaylightCard = () => {
@@ -24,8 +18,8 @@ const DaylightCard = () => {
           id='daylight-card-content'
           className='p-3 mx-5 rounded table-container'
         >
-          <MDBTable>
-            <MDBTableBody>
+          <table>
+            <tbody>
               <tr>
                 <th scope='row' className='text-start'>
                   UV index
@@ -82,8 +76,8 @@ const DaylightCard = () => {
                   {currentWeather.moonset ?? ''}
                 </th>
               </tr>
-            </MDBTableBody>
-          </MDBTable>
+            </tbody>
+          </table>
         </div>
       </MDBCardBody>
     </Card>
