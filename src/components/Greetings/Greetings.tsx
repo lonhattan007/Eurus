@@ -1,7 +1,9 @@
 import { MDBTypography } from 'mdb-react-ui-kit';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
-const Greetings = (props: any) => {
+const Greetings: FC<{
+  className: string;
+}> = (props) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Side effect function to keep time updated
@@ -28,7 +30,7 @@ const Greetings = (props: any) => {
   };
 
   return (
-    <div className={'mt-3 m-3 p-3 flex-column ' + props.className}>
+    <div className={'flex md:hidden m-3 p-3 flex-column ' + props.className}>
       <MDBTypography
         tag='div'
         className='display-3-lg display-4 text-primary fw-bold'

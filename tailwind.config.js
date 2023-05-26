@@ -2,7 +2,12 @@
 export default {
   content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        card: '0 10px 20px 0 rgba(0,0,0,.25)',
+      },
+      fontSize: {},
+    },
   },
   plugins: [],
 };

@@ -1,19 +1,19 @@
-import { MDBIcon, MDBTypography } from 'mdb-react-ui-kit';
-
 import Card from '@components/Card';
 import Greetings from '@components/Greetings';
 
+import { FiMapPin, FiWind } from 'react-icons/fi';
+import { FaTint } from 'react-icons/fa';
+import { TbGauge } from 'react-icons/tb';
+
+import { FC, useEffect } from 'react';
 import { useWeather } from '@hooks/useWeather';
-
-import { fixLocationName } from '@utils/fixLocationName';
-
-import './DetailedWeatherCard.scss';
-import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@hooks/customReduxHooks';
 import { updateCurrentWeather } from '@stores/currentWeatherSlice';
-import { Weather } from '@models/Weather.interface';
+import type { Weather } from '@models/Weather.interface';
 
-const DetailedWeatherCard = () => {
+import './DetailedWeatherCard.scss';
+
+const DetailedWeatherCard: FC = () => {
   const dispatch = useAppDispatch();
   const location = useAppSelector((state) => state.currentLocation.value);
   const weather: Weather = useWeather(location);
@@ -24,30 +24,25 @@ const DetailedWeatherCard = () => {
   }, [weather]);
 
   return (
-    <Card className='mb-3.5 w-4/5 card current-card'>
-      <Greetings className='d-flex d-md-none' />
-      <div className='mt-3 mb-1 text-2xl'>
-        <MDBIcon icon='map-marker-alt' size='xs' />
-        {/* TODO: This is just a patch, removed when DB is more concise */}
-        <span className=''>{' ' + fixLocationName(location)}</span>
-      </div>
-      <div className='flex-auto p-6 d-flex flex-column justify-content-evenly'>
+    <Card className='flex-col justify-items-center mb-3.5 w-4/5 current-card'>
+      <Greetings className='flex-auto' />
+      <span className='flex flex-auto justify-center items-center mt-0 w-full text-2xl md:mt-3'>
+        <FiMapPin className='inline-block mr-1 w-6 h-6 stroke-1.5' />
+        {location}
+      </span>
+      <div className='flex-auto p-6 w-full d-flex flex-column justify-content-evenly'>
         <div>
-          <MDBTypography tag='div' className='fw-bold display-md-3 display-4'>
-            {weather.tempC ?? ''}&deg;C
-          </MDBTypography>
-          <MDBTypography tag='div' className='fs-6'>
+          <h1 className='font-bold'>{weather.tempC ?? ''}&deg;C</h1>
+          <div className='text-base'>
             Real Feel {weather.feelsLikeC ?? ''}&deg;C
-          </MDBTypography>
-          <MDBTypography tag='div' className='fw-bold'>
-            {weather.weatherStatus ?? ''}
-          </MDBTypography>
+          </div>
+          <div className='fw-bold'>{weather.weatherStatus ?? ''}</div>
         </div>
         <table className='p-0 m-0 font-medium bg-transparent border-collapse'>
           <tbody>
             <tr>
               <th scope='row' className='text-start'>
-                <MDBIcon icon='wind' size='sm' />
+                <FiWind />
               </th>
               <td className='text-start'>Wind speed</td>
               <td className='text-end'>{`${
@@ -56,14 +51,14 @@ const DetailedWeatherCard = () => {
             </tr>
             <tr>
               <th scope='row' className='text-start'>
-                <MDBIcon icon='tint' size='sm' />
+                <FaTint />
               </th>
               <td className='text-start'>Humidity</td>
               <td className='text-end'>{`${weather.humidity ?? ''} %`}</td>
             </tr>
             <tr>
               <th scope='row' className='text-start'>
-                <MDBIcon icon='sort-amount-down' size='sm' />
+                <TbGauge />
               </th>
               <td className='text-start'>Air pressure</td>
               <td className='text-end'>{`${weather.pressure ?? ''} mbar`}</td>
