@@ -1,17 +1,18 @@
+import React, { FC, Suspense, useEffect } from 'react';
+
 import Card from '@components/Card';
-import Greetings from '@components/Greetings';
+const Greetings = React.lazy(() => import('@components/Greetings'));
 
 import { FiMapPin, FiWind } from 'react-icons/fi';
 import { FaTint } from 'react-icons/fa';
 import { TbGauge } from 'react-icons/tb';
 
-import { FC, useEffect } from 'react';
 import { useWeather } from '@hooks/useWeather';
 import { useAppDispatch, useAppSelector } from '@hooks/customReduxHooks';
 import { updateCurrentWeather } from '@stores/currentWeatherSlice';
 import type { Weather } from '@models/Weather.interface';
 
-import './DetailedWeatherCard.scss';
+import './DetailedWeatherCard.css';
 
 const DetailedWeatherCard: FC = () => {
   const dispatch = useAppDispatch();
@@ -24,13 +25,15 @@ const DetailedWeatherCard: FC = () => {
   }, [weather]);
 
   return (
-    <Card className='flex-col justify-items-center mb-3.5 w-4/5 current-card'>
-      <Greetings className='flex-auto' />
+    <Card className={`flex-col justify-items-center mb-3.5 w-4/5 current-card`}>
+      <Suspense>
+        <Greetings className='flex-auto' />
+      </Suspense>
       <span className='flex flex-auto justify-center items-center mt-0 w-full text-2xl md:mt-3'>
         <FiMapPin className='inline-block mr-1 w-6 h-6 stroke-1.5' />
         {location}
       </span>
-      <div className='flex-auto p-6 w-full d-flex flex-column justify-content-evenly'>
+      <div className='flex-auto justify-evenly p-6 w-full d-flex flex-column'>
         <div>
           <h1 className='font-bold'>{weather.tempC ?? ''}&deg;C</h1>
           <div className='text-base'>
