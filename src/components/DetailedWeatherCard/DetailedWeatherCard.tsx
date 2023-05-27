@@ -12,8 +12,6 @@ import { useAppDispatch, useAppSelector } from '@hooks/customReduxHooks';
 import { updateCurrentWeather } from '@stores/currentWeatherSlice';
 import type { Weather } from '@models/Weather.interface';
 
-import './DetailedWeatherCard.css';
-
 const DetailedWeatherCard: FC = () => {
   const dispatch = useAppDispatch();
   const location = useAppSelector((state) => state.currentLocation.value);
@@ -25,7 +23,14 @@ const DetailedWeatherCard: FC = () => {
   }, [weather]);
 
   return (
-    <Card className='flex-col justify-items-center text-white mb-[15px] current-card'>
+    <Card
+      className='
+      flex-col justify-items-center
+      w-4/5 min-h-[300px] h-[50vh]
+      mb-[15px] 
+      text-white 
+      bg-gradient-to-br from-[#97c4ff] to-[#599eef]'
+    >
       <Suspense>
         <Greetings className='flex flex-auto md:hidden' />
       </Suspense>
@@ -39,7 +44,7 @@ const DetailedWeatherCard: FC = () => {
           <div className='text-base'>
             Real Feel {weather.feelsLikeC ?? ''}&deg;C
           </div>
-          <div className='fw-bold'>{weather.weatherStatus ?? ''}</div>
+          <div className='font-bold'>{weather.weatherStatus ?? ''}</div>
         </div>
         <table className='p-0 m-0 font-medium bg-transparent border-collapse'>
           <tbody>

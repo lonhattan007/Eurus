@@ -9,7 +9,6 @@ import { updateLocation } from '@stores/currentLocationSlice';
 import { FiMapPin, FiWind } from 'react-icons/fi';
 import { FaTint } from 'react-icons/fa';
 
-import './SummarizedWeatherCard.css';
 import { Weather } from '@models/Weather.interface';
 
 const SummarizedWeatherCard = (props: any) => {
@@ -27,7 +26,7 @@ const SummarizedWeatherCard = (props: any) => {
 
   return (
     <Card
-      className='flex-col text-white mb-[10px] other-card'
+      className='flex-col text-white w-4/5 mb-[10px] bg-gradient-to-br from-[#ffc489] to-[#ff9b37] opacity-[80%] hover:opacity-100 other-card'
       onClick={handleClick}
     >
       <span className='flex flex-auto justify-end items-center w-full text-lg font-semibold'>
@@ -63,7 +62,7 @@ const SummarizedWeatherCard = (props: any) => {
             </table>
           </div>
           <div className='p-0 col d-flex flex-column-reverse align-items-end'>
-            <span className='fw-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
+            <span className='font-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
           </div>
         </div>
       </div>

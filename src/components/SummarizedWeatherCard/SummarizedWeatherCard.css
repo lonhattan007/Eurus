@@ -1,9 +1,0 @@
-.other-card {
-  width: 80%;
-  background-image: linear-gradient(#ffc489, #ff9b37);
-  opacity: 0.8;
-}
-
-.other-card:hover {
-  opacity: 1;
-}

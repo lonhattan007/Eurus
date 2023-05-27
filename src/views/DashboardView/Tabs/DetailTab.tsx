@@ -1,4 +1,3 @@
-import { MDBContainer, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 import {
   TemperatureCard,
   DaylightCard,
@@ -8,18 +7,18 @@ import {
 
 const DetailTab = () => {
   return (
-    <MDBContainer>
-      <MDBRow className='flex-row-reverse items-stretch'>
-        <MDBCol className='justify-stretch'>
+    <div className='container p-0'>
+      <div className='flex-row-reverse items-stretch row'>
+        <div className='col h-[60vh] justify-stretch'>
           <TemperatureCard />
           <RainCard />
-        </MDBCol>
-        <MDBCol className='justify-stretch'>
+        </div>
+        <div className='col h-[60vh] justify-stretch'>
           <DaylightCard />
           <WindCard />
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

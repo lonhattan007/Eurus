@@ -6,44 +6,44 @@ const TemperatureCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='flex flex-col info-card'>
-      <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
+    <Card className='flex flex-col my-8 text-black bg-white info-card'>
+      <span className='flex justify-start items-center my-1 mx-5 w-full font-bold text-[20px] text-primary'>
         <FaThermometerHalf className='mx-1' />
         Heat
       </span>
-      <div>
-        <div className='p-3 mx-5 rounded table-container'>
+      <div className='p-1 mb-2'>
+        <div className='p-3 mx-5 rounded bg-cream'>
           <table>
             <tbody>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Maximum temperature
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.maxTempC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Minimum temperature
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.minTempC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Heat index
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.heatIndexC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Wind chill
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.windChillC ?? ''} &deg;C
                 </th>
               </tr>

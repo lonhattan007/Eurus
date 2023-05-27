@@ -18,7 +18,7 @@ const LocationSearchBar = (props: any) => {
   return (
     <Select
       id={props.id}
-      className='rounded'
+      className='rounded text-dark text-center w-[85%]'
       options={VietnamLocations}
       value={VietnamLocations.find(
         (option) => option.value === selectedLocation,

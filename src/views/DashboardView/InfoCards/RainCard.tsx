@@ -6,52 +6,52 @@ const RainCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='flex flex-col info-card'>
-      <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
+    <Card className='flex flex-col my-8 text-black bg-white info-card'>
+      <span className='flex justify-start items-center my-1 mx-5 w-full font-bold text-[20px] text-primary'>
         <FaCloudRain className='mx-1 w-6 h-6' />
-        Precipitation
+        Precipitation and Fog
       </span>
-      <div>
-        <div className='p-3 mx-5 rounded table-container'>
+      <div className='p-1 mb-2'>
+        <div className='p-3 mx-5 rounded bg-cream'>
           <table>
             <tbody>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Precipitation
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.precipitationMm ?? ''} mm
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Snow fall
                 </th>
-                <th scope='row' className='text-end text-primary fw-bold'>
+                <th scope='row' className='font-bold text-end text-primary'>
                   {currentWeather.totalSnowCm ?? ''} cm
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Dew point
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.dewPointC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Visibility
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.visibility ?? ''} Km
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='text-start'>
+                <th scope='row' className='font-normal text-start text-dark'>
                   Cloud cover
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th className='font-bold text-end text-primary'>
                   {currentWeather.cloudCover ?? ''} %
                 </th>
               </tr>
