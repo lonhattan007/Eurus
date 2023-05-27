@@ -1,72 +1,60 @@
-import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import { FC } from 'react';
+
 import Greetings from '@components/Greetings';
 import LocationSearchBar from '@components/LocationSearchBar';
 import DetailedWeatherCard from '@components/DetailedWeatherCard/DetailedWeatherCard';
 import SummarizedWeatherCard from '@components/SummarizedWeatherCard/SummarizedWeatherCard';
 import { DashboardViewTabs } from './DashboardViewTabs';
 
-// import { useEffect } from 'react';
-// import { useCurrentCoordinates } from '@hooks/useCurrentCoordinates';
+import { useGetCurrentCoordinates } from '@hooks/useCurrentCoordinates';
 import { useAppSelector } from '@hooks/customReduxHooks';
 
-import './DashboardView.scss';
-import { ForecastTypes, useForecast } from '@hooks/useForecast';
-// import { useGetWeatherByCoords } from '@hooks/useGetWeatherByCoords';
-// import { useGetWeatherByCoords } from '@hooks/useGetWeatherByCoords';
+import './DashboardView.css';
 
-const DashboardView = () => {
-  // const currentCoords = useCurrentCoordinates();
+const DashboardView: FC = () => {
+  useGetCurrentCoordinates();
   const recentLocations = useAppSelector(
     (state) => state.recentLocations.value,
   );
-
-  // if (currentCoords) {
-  //   useGetWeatherByCoords()
-  // }
-
-  useForecast(ForecastTypes.weekly);
-  useForecast(ForecastTypes.hourly);
-
   return (
-    <MDBContainer id='content-container'>
-      <MDBRow id='content-row' className='flex-row-reverse'>
-        <MDBCol
-          className='p-0 side-panel d-flex justify-content-center align-items-start'
-          lg='3'
-          md='4'
-        >
-          <MDBContainer>
-            <MDBRow className='my-3 justify-content-center'>
-              <LocationSearchBar id='search-section' />
-            </MDBRow>
-            <MDBRow className='my-3 justify-content-center'>
+    <div className='p-0 m-0 w-full h-full'>
+      <div className='flex overflow-x-hidden overflow-y-scroll flex-col m-0 w-screen h-screen md:flex-row-reverse'>
+        <div className='flex flex-col flex-auto justify-center items-start p-0 bg-white md:w-1/3 lg:w-1/4'>
+          <div className='container p-0'>
+            <div className='flex justify-center my-3'>
+              <LocationSearchBar
+                id='search-section'
+                className='mb-[20px] mt-[10px]'
+              />
+            </div>
+            <div className='flex justify-center my-3'>
               <DetailedWeatherCard />
-            </MDBRow>
-            <MDBRow className='my-3 justify-content-start text-align-left'>
-              <h6 className='text'>
+            </div>
+            <div className='justify-start my-3 text-center'>
+              <h6 className='text-[#f9a550] font-bold'>
                 {localStorage.getItem('recentLocations') !== null
                   ? 'Recently Viewed'
                   : 'Other Locations'}
               </h6>
-            </MDBRow>
+            </div>
             {recentLocations.slice(1).map((location) => (
-              <MDBRow
+              <div
                 key={location + '-summarized-info'}
-                className='my-3 justify-content-center'
+                className='flex justify-center my-3'
               >
                 <SummarizedWeatherCard location={location} />
-              </MDBRow>
+              </div>
             ))}
-          </MDBContainer>
-        </MDBCol>
-        <MDBCol className='p-0 detail-board' lg='9' md='8'>
-          <Greetings className='d-none d-md-flex align-items-start' />
-          <MDBRow className='mx-3'>
+          </div>
+        </div>
+        <div className='flex flex-col flex-auto p-0 md:w-2/3 lg:w-3/4 bg-sky-100/90'>
+          <Greetings className='hidden items-start md:flex' />
+          <div className='flex flex-row w-full'>
             <DashboardViewTabs />
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

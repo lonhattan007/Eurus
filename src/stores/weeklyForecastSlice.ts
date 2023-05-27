@@ -2,41 +2,41 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { RootState } from './store';
 import type { WeatherForecast } from '@models/WeatherForecast.interface';
 
-interface WeeklyForecastState {
+interface DailyForecastState {
   value: WeatherForecast[];
   maxTemp: number;
   minTemp: number;
 }
 
-const initialState: WeeklyForecastState = {
+const initialState: DailyForecastState = {
   value: [],
   maxTemp: 45,
   minTemp: 0,
 };
 
-const weeklyForecastSlice = createSlice({
+const dailyForecastSlice = createSlice({
   name: 'dailyForecast',
   initialState,
   reducers: {
-    updateWeeklyForecast: (state, action) => {
+    updateDailyForecast: (state, action) => {
       state.value = action.payload;
 
-      const maxTemps = state.value.map((item) => item.maxTempC!);
+      const maxTemps = state.value.map((item) => item.maxTempC ?? 0);
       state.maxTemp = Math.max(...maxTemps);
 
-      const minTemps = state.value.map((item) => item.minTempC!);
+      const minTemps = state.value.map((item) => item.minTempC ?? 0);
       state.minTemp = Math.min(...minTemps);
     },
   },
 });
 
-export const { updateWeeklyForecast } = weeklyForecastSlice.actions;
+export const { updateDailyForecast } = dailyForecastSlice.actions;
 
 export const selectWeeklyForecast = (state: RootState) =>
-  state.weeklyForecast.value;
+  state.dailyForecast.value;
 export const selectWeeklyForecastMaxTemp = (state: RootState) =>
-  state.weeklyForecast.maxTemp;
+  state.dailyForecast.maxTemp;
 export const selectWeeklyForecastMinTemp = (state: RootState) =>
-  state.weeklyForecast.minTemp;
+  state.dailyForecast.minTemp;
 
-export default weeklyForecastSlice.reducer;
+export default dailyForecastSlice.reducer;

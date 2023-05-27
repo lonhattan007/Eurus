@@ -1,55 +1,50 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from './customReduxHooks';
-import { useGetWeatherByCoords } from './useGetWeatherByCoords';
-import { setCurrentCoords } from '@stores/currentCoordsSlice';
-import axios from 'axios';
-import moment from 'moment';
+// import { useAppSelector, useAppDispatch } from './customReduxHooks';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+// import type { Address } from '@models/Address.interface';
 
-// The maximum age in milliseconds of a possible cached position that is acceptable to return
+// The maximum age in milliseconds of a possible cached position
+// that is acceptable to return
 // Currently set to 1 hour
 const MAX_AGE = 1000 * 60 * 60;
 
-// Currently set to 10 seconds
-const GET_COORDS_TIME_OUT = 10000;
+// The maximum length of time in milliseconds the device is allowed to take
+// in order to return a position
+// Currently set to 15 seconds
+const GET_COORDS_TIME_OUT = 60000;
 
-function useCurrentCoordinates() {
-  const currentCoords = useAppSelector((state) => state.currentCoords.value);
-  const dispatch = useAppDispatch();
-
+function useGetCurrentCoordinates() {
   useEffect(() => {
     // If a position is found, save its coordinates to local storage
-    const success = (position: any) => {
+    const success: PositionCallback = (position: GeolocationPosition) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      // const startDateTime = moment().startOf('h').format('YYYY-MM-DDTHH:mm:ss');
-      // const endDateTime = moment().add(1, 'h').startOf('h').format('YYYY-MM-DDTHH:mm:ss');
-
-      const payload = { latitude, longitude };
 
       const params = {
-        latitude,
-        longitude,
-        format: 'jsonv2',
+        format: 'json',
+        lat: latitude,
+        lon: longitude,
       };
 
-      localStorage.setItem('currentCoordinates', `${latitude},${longitude}`);
-      dispatch(setCurrentCoords(payload));
-
       axios
-        .get(`https://nominatim.openstreetmap.org/reverse`, { params })
-        .then((res) => {})
-        .catch((err: any) => {
+        .get('', {
+          baseURL: import.meta.env.VITE_GEOCODING_URL,
+          params,
+        })
+        .then((res: AxiosResponse) => {
+          console.log(res.data.address);
+        })
+        .catch((err: Error | AxiosError) => {
           console.log(err.message);
         });
-
-      console.log('Geolocation detected');
     };
 
-    const error = (err: any) => {
-      console.error(err);
+    const error: PositionErrorCallback = (err: GeolocationPositionError) => {
+      console.error(`ERROR(${err.code}): ${err.message}`);
     };
 
-    const options = {
+    const options: PositionOptions = {
+      enableHighAccuracy: true,
       maximumAge: MAX_AGE,
       timeout: GET_COORDS_TIME_OUT,
     };
@@ -60,10 +55,6 @@ function useCurrentCoordinates() {
 
     navigator.geolocation.getCurrentPosition(success, error, options);
   }, []);
-
-  useGetWeatherByCoords();
-
-  return currentCoords;
 }
 
-export { useCurrentCoordinates };
+export { useGetCurrentCoordinates };

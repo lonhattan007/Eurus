@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import moment from 'moment';
 
 function useWeather(location: string) {
@@ -10,7 +10,7 @@ function useWeather(location: string) {
     .startOf('h')
     .format('YYYY-MM-DDTHH:mm:ss');
 
-  const [weather, setWeather] = useState({});
+  const [weather, _setWeather] = useState({});
 
   useEffect(() => {
     const params = {
@@ -19,15 +19,16 @@ function useWeather(location: string) {
       endDateTime: endDateTime,
     };
 
-    axios
-      .get('/weathers/location-name', { params: params })
-      .then((res) => {
-        const weatherReports = JSON.parse(res.request.response);
-        setWeather({ ...weatherReports[0] });
-      })
-      .catch((err) => {
-        console.error(err.message);
-      });
+    // axios
+    //   .get('/weathers/location-name', { params: params })
+    //   .then((res) => {
+    //     const weatherReports = JSON.parse(res.request.response);
+    //     setWeather({ ...weatherReports[0] });
+    //   })
+    //   .catch((err) => {
+    //     console.error(err.message);
+    //   });
+    JSON.stringify(params);
   }, [location]);
 
   return weather;

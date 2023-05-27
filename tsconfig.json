@@ -14,7 +14,7 @@
       "@mocks/*": ["./mocks/*"],
       "@models/*": ["./src/models/*"],
       "@constants/*": ["./src/constants/*"],
-      "@styles/*": ["./src/scss/*"],
+      "@styles/*": ["./src/styles/*"],
       "@stores/*": ["./src/stores/*"],
       "@routes/*": ["./src/routes/*"],
       "@utils/*": ["./src/utils/*"]

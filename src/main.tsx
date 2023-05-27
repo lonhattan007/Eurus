@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import '@styles/styles.scss';
-import 'mdb-react-ui-kit/dist/css/mdb.dark.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@styles/styles.css';
 
 import { Provider } from 'react-redux';
 import store from '@stores/store';

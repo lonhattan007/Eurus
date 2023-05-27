@@ -1,15 +1,15 @@
 # Eurus - Weather Forecast Web Application
 
-This is the continuation of a private Bootcamp Capstone project. The product aims to be a user-friendly weather forecast web application.
+`Eurus` is the continuation of a private Bootcamp Capstone project. It aims to be a user-friendly weather forecast web application.
 
-This is a private and educational project to self-taught new technologies and apply better practices to the owner's software development workflow.
+This is a personal and educational project to self-taught new technologies and apply better practices to the owner's software development workflow.
 
 ---
 
 ## TODOs:
 
 - Migrate from `MDB React` to `TailwindCSS`
-- Fetch APIs from third-party providers, currently `AccuWeather`
+- Fetch APIs from third-party providers, currently `OpenWeather`
 	- Better and more concise data
 - Add some enhancements on UI/UX:
 	- Localization
@@ -129,4 +129,4 @@ See [DEVELOPMENT.md](./docs/DEVELOPMENT.md)
 
 ## License
 
-This project has the [MIT License](./LICENSE).
+This project is [MIT Licensed](./LICENSE).
