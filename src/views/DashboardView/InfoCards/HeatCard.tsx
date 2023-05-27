@@ -1,23 +1,18 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import { MDBCardBody, MDBCardTitle, MDBIcon } from 'mdb-react-ui-kit';
+import { FaThermometerHalf } from 'react-icons/fa';
 import Card from '@components/Card/Card';
 
 const HeatCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='info-card'>
-      <MDBCardTitle className='text-primary'>
-        <span>
-          <MDBIcon className='px-1' icon='thermometer-half' />
-          Heat
-        </span>
-      </MDBCardTitle>
-      <MDBCardBody>
-        <div
-          id='heat-card-content'
-          className='p-3 mx-5 rounded table-container'
-        >
+    <Card className='flex flex-col info-card'>
+      <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
+        <FaThermometerHalf className='mx-1' />
+        Heat
+      </span>
+      <div>
+        <div className='p-3 mx-5 rounded table-container'>
           <table>
             <tbody>
               <tr>
@@ -55,7 +50,7 @@ const HeatCard = () => {
             </tbody>
           </table>
         </div>
-      </MDBCardBody>
+      </div>
     </Card>
   );
 };

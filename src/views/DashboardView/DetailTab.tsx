@@ -1,9 +1,11 @@
 import { MDBContainer, MDBCol, MDBRow } from 'mdb-react-ui-kit';
-import { WindCard } from './WindCard';
-import { RainCard } from './RainCard';
-import { VisibilityCard } from './VisibilityCard';
-import { DaylightCard } from './DaylightCard';
-import { HeatCard } from './HeatCard';
+import {
+  HeatCard,
+  DaylightCard,
+  RainCard,
+  WindCard,
+  VisibilityCard,
+} from './InfoCards';
 
 const DetailTab = () => {
   return (

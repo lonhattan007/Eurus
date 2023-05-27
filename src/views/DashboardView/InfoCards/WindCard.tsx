@@ -1,22 +1,18 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import { MDBCardBody, MDBCardTitle, MDBIcon } from 'mdb-react-ui-kit';
+import { FiWind } from 'react-icons/fi';
+import { FaLocationArrow } from 'react-icons/fa';
 import Card from '@components/Card/Card';
 
 const WindCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='info-card'>
-      <MDBCardTitle className='text-primary'>
-        <span>
-          <MDBIcon className='px-1' icon='wind' /> Wind
-        </span>
-      </MDBCardTitle>
-      <MDBCardBody>
-        <div
-          id='wind-card-content'
-          className='p-3 mx-5 rounded table-container'
-        >
+    <Card className='flex flex-col info-card'>
+      <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
+        <FiWind className='mx-1 w-7 h-7' /> Wind
+      </span>
+      <div>
+        <div className='p-3 mx-5 rounded table-container'>
           <table>
             <tbody>
               <tr>
@@ -42,25 +38,27 @@ const WindCard = () => {
                 <th className='text-end text-primary fw-bold'>
                   {currentWeather.windDirDegree ? (
                     <>
-                      {/* The icon is slanted by 45 degrees by default */}
-                      <MDBIcon
-                        className='px-1'
-                        icon='location-arrow'
-                        style={{
-                          rotate: `${-45 + currentWeather.windDirDegree}deg`,
-                        }}
-                      />
-                      <span>{currentWeather.windDirDegree}&deg;</span>
+                      <span className='flex items-center'>
+                        {/* The icon is slanted by 45 degrees by default */}
+                        <FaLocationArrow
+                          className='mx-1'
+                          style={{
+                            rotate: `${-45 + currentWeather.windDirDegree}deg`,
+                          }}
+                        />
+                        {currentWeather.windDirDegree};
+                      </span>
                     </>
                   ) : (
                     ''
                   )}
+                  &deg;
                 </th>
               </tr>
             </tbody>
           </table>
         </div>
-      </MDBCardBody>
+      </div>
     </Card>
   );
 };

@@ -1,23 +1,18 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import { MDBCardBody, MDBCardTitle, MDBIcon } from 'mdb-react-ui-kit';
+import { FaCloudRain } from 'react-icons/fa';
 import Card from '@components/Card/Card';
 
 const RainCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='info-card'>
-      <MDBCardTitle className='text-primary'>
-        <span>
-          <MDBIcon className='px-1' icon='cloud-showers-heavy' /> Rainfall and
-          Mist
-        </span>
-      </MDBCardTitle>
-      <MDBCardBody>
-        <div
-          id='rain-card-content'
-          className='p-3 mx-5 rounded table-container'
-        >
+    <Card className='flex flex-col info-card'>
+      <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
+        <FaCloudRain className='mx-1 w-6 h-6' />
+        Precipitation
+      </span>
+      <div>
+        <div className='p-3 mx-5 rounded table-container'>
           <table>
             <tbody>
               <tr>
@@ -47,7 +42,7 @@ const RainCard = () => {
             </tbody>
           </table>
         </div>
-      </MDBCardBody>
+      </div>
     </Card>
   );
 };
