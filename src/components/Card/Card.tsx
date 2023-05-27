@@ -7,7 +7,7 @@ const Card: FC<{
 }> = (props) => {
   return (
     <div
-      className={`shadow-card flex rounded + ${props.className}`}
+      className={`shadow-card flex rounded-lg + ${props.className}`}
       onClick={props.onClick}
     >
       {props.children}

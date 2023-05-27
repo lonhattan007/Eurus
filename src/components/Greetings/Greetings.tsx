@@ -30,7 +30,7 @@ const Greetings: FC<{
   };
 
   return (
-    <div className={'flex md:hidden m-3 p-3 flex-column ' + props.className}>
+    <div className={'m-3 p-3 flex-column ' + props.className}>
       <MDBTypography
         tag='div'
         className='display-3-lg display-4 text-primary fw-bold'

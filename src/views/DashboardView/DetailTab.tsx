@@ -8,15 +8,15 @@ import { HeatCard } from './HeatCard';
 const DetailTab = () => {
   return (
     <MDBContainer>
-      <MDBRow>
-        <MDBCol className='justify-content-between'>
-          <WindCard />
-          <RainCard />
-          <VisibilityCard />
-        </MDBCol>
-        <MDBCol className='justify-content-between'>
+      <MDBRow className='flex-row-reverse'>
+        <MDBCol className='justify-between'>
           <HeatCard />
           <DaylightCard />
+        </MDBCol>
+        <MDBCol className='justify-between'>
+          <RainCard />
+          <WindCard />
+          <VisibilityCard />
         </MDBCol>
       </MDBRow>
     </MDBContainer>

@@ -2,15 +2,14 @@ import React from 'react';
 import { useWeather } from '@hooks/useWeather';
 import { useAppDispatch } from '@hooks/customReduxHooks';
 
-import { MDBCardTitle, MDBIcon, MDBCol, MDBRow } from 'mdb-react-ui-kit';
-
 import Card from '@components/Card';
 import { rearrangeLocation } from '@stores/recentLocationsSlice';
 import { updateLocation } from '@stores/currentLocationSlice';
 
-import { fixLocationName } from '@utils/fixLocationName';
+import { FiMapPin, FiWind } from 'react-icons/fi';
+import { FaTint } from 'react-icons/fa';
 
-import './SummarizedWeatherCard.scss';
+import './SummarizedWeatherCard.css';
 import { Weather } from '@models/Weather.interface';
 
 const SummarizedWeatherCard = (props: any) => {
@@ -27,22 +26,22 @@ const SummarizedWeatherCard = (props: any) => {
   };
 
   return (
-    <Card className='other-card' onClick={handleClick}>
-      <MDBCardTitle className='flex-row-reverse mt-2 d-flex fs-5'>
-        <span>
-          <MDBIcon icon='map-marker-alt' size='xs' />
-          {/* TODO: This is just a patch, removed when DB is more concise */}
-          {' ' + fixLocationName(props.location)}
-        </span>
-      </MDBCardTitle>
+    <Card
+      className='flex-col text-white mb-[10px] other-card'
+      onClick={handleClick}
+    >
+      <span className='flex flex-auto justify-end items-center w-full text-lg font-semibold'>
+        <FiMapPin className='inline-block mr-1 w-4 h-4 stroke-1.5' />
+        {props.location}
+      </span>
       <div className='flex-auto p-0 pb-3'>
-        <MDBRow className='p-0 m-0'>
-          <MDBCol className='p-0 d-flex flex-column-reverse align-items-start'>
-            <table className='p-0 m-0 text-sm bg-transparent border-collapse'>
+        <div className='p-0 m-0 row'>
+          <div className='p-0 col d-flex flex-column-reverse align-items-start'>
+            <table className='p-0 m-0 text-sm border-collapse table-auto'>
               <tbody>
                 <tr>
                   <th scope='row'>
-                    <MDBIcon icon='wind' size='sm' />
+                    <FiWind />
                   </th>
                   <td>Wind</td>
                   <td className='px-2'>|</td>
@@ -52,7 +51,7 @@ const SummarizedWeatherCard = (props: any) => {
                 </tr>
                 <tr>
                   <th scope='row'>
-                    <MDBIcon icon='tint' size='sm' />
+                    <FaTint />
                   </th>
                   <td>Hum</td>
                   <td className='px-2'>|</td>
@@ -62,11 +61,11 @@ const SummarizedWeatherCard = (props: any) => {
                 </tr>
               </tbody>
             </table>
-          </MDBCol>
-          <MDBCol className='p-0 d-flex flex-column-reverse align-items-end'>
+          </div>
+          <div className='p-0 col d-flex flex-column-reverse align-items-end'>
             <span className='fw-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
-          </MDBCol>
-        </MDBRow>
+          </div>
+        </div>
       </div>
     </Card>
   );

@@ -25,9 +25,9 @@ const DetailedWeatherCard: FC = () => {
   }, [weather]);
 
   return (
-    <Card className={`flex-col justify-items-center mb-3.5 w-4/5 current-card`}>
+    <Card className='flex-col justify-items-center text-white mb-[15px] current-card'>
       <Suspense>
-        <Greetings className='flex-auto' />
+        <Greetings className='flex flex-auto md:hidden' />
       </Suspense>
       <span className='flex flex-auto justify-center items-center mt-0 w-full text-2xl md:mt-3'>
         <FiMapPin className='inline-block mr-1 w-6 h-6 stroke-1.5' />

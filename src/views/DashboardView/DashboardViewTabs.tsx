@@ -44,7 +44,7 @@ const DashboardViewTabs = () => {
 
   return (
     <>
-      <MDBTabs pills className='mb-3 justify-content-center'>
+      <MDBTabs pills className='justify-center mb-3'>
         {tabs.map((tab) => (
           <MDBTabsItem className='w-25' key={tab.ref + '-tab-item'}>
             <MDBTabsLink
