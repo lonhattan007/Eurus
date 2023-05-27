@@ -6,9 +6,7 @@ import {
   MDBTabsContent,
   MDBTabsPane,
 } from 'mdb-react-ui-kit';
-import { DetailTab } from './DetailTab';
-import { HourlyForecastTab } from './HourlyForecastTab';
-import { WeeklyForecastTab } from './WeeklyForecastTab';
+import { DetailTab, HourlyForecastTab, DailyForecastTab } from './Tabs';
 
 const tabs = [
   {
@@ -24,7 +22,7 @@ const tabs = [
   {
     name: 'Weekly forecast',
     ref: 'weekly-forecast',
-    element: <WeeklyForecastTab />,
+    element: <DailyForecastTab />,
   },
 ];
 

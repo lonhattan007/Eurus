@@ -1,7 +1,7 @@
 import WeeklyForecastChart from '@components/WeeklyForecastChart';
 import { MDBCard, MDBCardBody, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 
-const WeeklyForecastTab = () => {
+const DailyForecastTab = () => {
   return (
     <MDBRow>
       <MDBCol>
@@ -15,4 +15,4 @@ const WeeklyForecastTab = () => {
   );
 };
 
-export { WeeklyForecastTab };
+export { DailyForecastTab };

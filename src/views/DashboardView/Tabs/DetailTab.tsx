@@ -5,17 +5,17 @@ import {
   RainCard,
   WindCard,
   VisibilityCard,
-} from './InfoCards';
+} from '../InfoCards';
 
 const DetailTab = () => {
   return (
     <MDBContainer>
-      <MDBRow className='flex-row-reverse'>
-        <MDBCol className='justify-between'>
+      <MDBRow className='flex-row-reverse items-stretch'>
+        <MDBCol className=' justify-stretch'>
           <HeatCard />
           <DaylightCard />
         </MDBCol>
-        <MDBCol className='justify-between'>
+        <MDBCol className='justify-stretch'>
           <RainCard />
           <WindCard />
           <VisibilityCard />
