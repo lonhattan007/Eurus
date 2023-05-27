@@ -25,11 +25,11 @@ const DetailedWeatherCard: FC = () => {
   return (
     <Card
       className='
-      flex-col justify-items-center
-      w-4/5 min-h-[300px] h-[50vh]
-      mb-[15px] 
-      text-white 
-      bg-gradient-to-br from-[#97c4ff] to-[#599eef]'
+        flex flex-col justify-items-center
+        w-4/5 min-h-[300px] h-[50vh]
+        mb-[15px] 
+        text-white 
+        bg-gradient-to-br from-[#97c4ff] to-[#599eef]'
     >
       <Suspense>
         <Greetings className='flex flex-auto md:hidden' />
@@ -38,7 +38,7 @@ const DetailedWeatherCard: FC = () => {
         <FiMapPin className='inline-block mr-1 w-6 h-6 stroke-1.5' />
         {location}
       </span>
-      <div className='flex-auto justify-evenly p-6 w-full d-flex flex-column'>
+      <div className='flex flex-col flex-auto justify-evenly p-6 w-full'>
         <div>
           <h1 className='font-bold'>{weather.tempC ?? ''}&deg;C</h1>
           <div className='text-base'>

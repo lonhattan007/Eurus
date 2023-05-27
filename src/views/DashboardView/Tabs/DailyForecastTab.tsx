@@ -1,17 +1,17 @@
+import Card from '@components/Card/Card';
 import DailyForecastChart from '@components/DailyForecastChart';
-import { MDBCard, MDBCardBody, MDBCol, MDBRow } from 'mdb-react-ui-kit';
 
 const DailyForecastTab = () => {
   return (
-    <MDBRow>
-      <MDBCol>
-        <MDBCard className='info-card'>
-          <MDBCardBody>
+    <div className='flex flex-row row'>
+      <div className='flex flex-col col'>
+        <Card className='flex my-8 bg-white text-dark'>
+          <div>
             <DailyForecastChart />
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
+          </div>
+        </Card>
+      </div>
+    </div>
   );
 };
 

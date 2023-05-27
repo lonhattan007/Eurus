@@ -6,7 +6,7 @@ const TemperatureCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='flex flex-col my-8 text-black bg-white info-card'>
+    <Card className='flex flex-col my-8 bg-white text-dark'>
       <span className='flex justify-start items-center my-1 mx-5 w-full font-bold text-[20px] text-primary'>
         <FaThermometerHalf className='mx-1' />
         Heat
@@ -16,7 +16,7 @@ const TemperatureCard = () => {
           <table>
             <tbody>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Maximum temperature
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -24,7 +24,7 @@ const TemperatureCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Minimum temperature
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -32,7 +32,7 @@ const TemperatureCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Heat index
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -40,7 +40,7 @@ const TemperatureCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Wind chill
                 </th>
                 <th className='font-bold text-end text-primary'>

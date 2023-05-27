@@ -6,7 +6,7 @@ const RainCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='flex flex-col my-8 text-black bg-white info-card'>
+    <Card className='flex flex-col my-8 bg-white text-dark'>
       <span className='flex justify-start items-center my-1 mx-5 w-full font-bold text-[20px] text-primary'>
         <FaCloudRain className='mx-1 w-6 h-6' />
         Precipitation and Fog
@@ -16,7 +16,7 @@ const RainCard = () => {
           <table>
             <tbody>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Precipitation
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -24,7 +24,7 @@ const RainCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Snow fall
                 </th>
                 <th scope='row' className='font-bold text-end text-primary'>
@@ -32,7 +32,7 @@ const RainCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Dew point
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -40,7 +40,7 @@ const RainCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Visibility
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -48,7 +48,7 @@ const RainCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Cloud cover
                 </th>
                 <th className='font-bold text-end text-primary'>

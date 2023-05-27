@@ -7,13 +7,13 @@ import {
 
 const DetailTab = () => {
   return (
-    <div className='container p-0'>
-      <div className='flex-row-reverse items-stretch row'>
-        <div className='col h-[60vh] justify-stretch'>
+    <div className='flex p-0'>
+      <div className='flex flex-row-reverse items-stretch'>
+        <div className='flex flex-col h-[60vh] justify-stretch'>
           <TemperatureCard />
           <RainCard />
         </div>
-        <div className='col h-[60vh] justify-stretch'>
+        <div className='flex flex-col h-[60vh] justify-stretch'>
           <DaylightCard />
           <WindCard />
         </div>

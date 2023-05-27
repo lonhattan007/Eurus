@@ -6,7 +6,7 @@ const DaylightCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
-    <Card className='flex flex-col my-8 text-black bg-white info-card'>
+    <Card className='flex flex-col my-8 bg-white text-dark'>
       <span className='flex justify-start items-center my-1 mx-5 w-full font-bold text-[20px] text-primary'>
         <FaCloudSun className='mx-1' icon='sun' />
         Daylight
@@ -16,7 +16,7 @@ const DaylightCard = () => {
           <table>
             <tbody>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   UV index
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -24,7 +24,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Sun hour
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -32,7 +32,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Sunset
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -40,7 +40,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Sunset
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -48,7 +48,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Moon illumination
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -56,7 +56,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Moonrise
                 </th>
                 <th className='font-bold text-end text-primary'>
@@ -64,7 +64,7 @@ const DaylightCard = () => {
                 </th>
               </tr>
               <tr>
-                <th scope='row' className='font-normal text-start text-dark'>
+                <th scope='row' className='font-normal text-start'>
                   Moonset
                 </th>
                 <th className='font-bold text-end text-primary'>

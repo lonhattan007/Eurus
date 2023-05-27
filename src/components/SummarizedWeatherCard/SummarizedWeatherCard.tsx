@@ -26,7 +26,13 @@ const SummarizedWeatherCard = (props: any) => {
 
   return (
     <Card
-      className='flex-col text-white w-4/5 mb-[10px] bg-gradient-to-br from-[#ffc489] to-[#ff9b37] opacity-[80%] hover:opacity-100 other-card'
+      className='
+        flex flex-col
+        text-white
+        w-4/5
+        px-3 pt-2
+        bg-gradient-to-br from-[#ffc489] to-[#ff9b37]
+        opacity-[80%] hover:opacity-100'
       onClick={handleClick}
     >
       <span className='flex flex-auto justify-end items-center w-full text-lg font-semibold'>
@@ -34,8 +40,8 @@ const SummarizedWeatherCard = (props: any) => {
         {props.location}
       </span>
       <div className='flex-auto p-0 pb-3'>
-        <div className='p-0 m-0 row'>
-          <div className='p-0 col d-flex flex-column-reverse align-items-start'>
+        <div className='p-0 m-0'>
+          <div className='flex p-0 flex-column-reverse align-items-start'>
             <table className='p-0 m-0 text-sm border-collapse table-auto'>
               <tbody>
                 <tr>
@@ -61,8 +67,10 @@ const SummarizedWeatherCard = (props: any) => {
               </tbody>
             </table>
           </div>
-          <div className='p-0 col d-flex flex-column-reverse align-items-end'>
-            <span className='font-bold fs-5'>{weather.tempC ?? ''}&deg;C</span>
+          <div className='flex p-0 flex-column-reverse align-items-end'>
+            <span className='font-bold text-[20px]'>
+              {weather.tempC ?? ''}&deg;C
+            </span>
           </div>
         </div>
       </div>
