@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from './customReduxHooks';
 
 import axios from 'axios';
 import { updateHourlyForecast } from '@stores/hourlyForecastSlice';
-import { updateWeeklyForecast } from '@stores/weeklyForecastSlice';
+import { updateDailyForecast } from '@stores/weeklyForecastSlice';
 import moment from 'moment';
 
 const ForecastTypes = {
@@ -36,7 +36,7 @@ function useForecast(forecastType: string) {
     if (forecastType === ForecastTypes.hourly) {
       dispatch(updateHourlyForecast(forecast));
     } else {
-      dispatch(updateWeeklyForecast(forecast));
+      dispatch(updateDailyForecast(forecast));
     }
   }, [forecast]);
 

@@ -23,14 +23,14 @@ ChartJS.register(
   Legend,
 );
 
-const WeeklyForecastChart = () => {
+const DailyForecastChart = () => {
   const location = useAppSelector((state) => state.currentLocation.value);
 
-  const weeklyForecast = useAppSelector((state) => state.weeklyForecast.value);
-  const maxTemp = useAppSelector((state) => state.weeklyForecast.maxTemp);
-  const minTemp = useAppSelector((state) => state.weeklyForecast.minTemp);
+  const dailyForecast = useAppSelector((state) => state.dailyForecast.value);
+  const maxTemp = useAppSelector((state) => state.dailyForecast.maxTemp);
+  const minTemp = useAppSelector((state) => state.dailyForecast.minTemp);
 
-  const labels = weeklyForecast.map((item, index) =>
+  const labels = dailyForecast.map((item, index) =>
     moment(item.dateTime).add(index, 'd').format('DD/MM'),
   );
 
@@ -39,7 +39,7 @@ const WeeklyForecastChart = () => {
     datasets: [
       {
         label: 'Maximum temperature',
-        data: weeklyForecast.map((item) => item.maxTempC),
+        data: dailyForecast.map((item) => item.maxTempC),
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
         yAxisID: 'temperature',
@@ -47,7 +47,7 @@ const WeeklyForecastChart = () => {
       },
       {
         label: 'Minimum temperature',
-        data: weeklyForecast.map((item) => item.minTempC),
+        data: dailyForecast.map((item) => item.minTempC),
         borderColor: 'rgb(255, 196, 137)',
         backgroundColor: 'rgba(255, 196, 137, 0.5)',
         yAxisID: 'temperature',
@@ -55,7 +55,7 @@ const WeeklyForecastChart = () => {
       },
       {
         label: 'Chance of Rain',
-        data: weeklyForecast.map((item) => item.chanceOfRain),
+        data: dailyForecast.map((item) => item.chanceOfRain),
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
         yAxisID: 'chanceOfRain',
@@ -102,4 +102,4 @@ const WeeklyForecastChart = () => {
   );
 };
 
-export default WeeklyForecastChart;
+export default DailyForecastChart;
