@@ -79,4 +79,4 @@ const DaylightCard = () => {
   );
 };
 
-export { DaylightCard };
+export default DaylightCard;

@@ -63,4 +63,4 @@ const WindCard = () => {
   );
 };
 
-export { WindCard };
+export default WindCard;

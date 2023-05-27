@@ -1,15 +1,15 @@
 import { useAppSelector } from '@hooks/customReduxHooks';
-import { FaBinoculars } from 'react-icons/fa';
+import { FaThermometerHalf } from 'react-icons/fa';
 import Card from '@components/Card/Card';
 
-const VisibilityCard = () => {
+const TemperatureCard = () => {
   const currentWeather = useAppSelector((state) => state.currentWeather.value);
 
   return (
     <Card className='flex flex-col info-card'>
       <span className='flex justify-start items-center w-full font-bold text-[20px] text-primary'>
-        <FaBinoculars className='mx-1 w-5 h-5 rotate-[-90deg]' />
-        Visibility
+        <FaThermometerHalf className='mx-1' />
+        Heat
       </span>
       <div>
         <div className='p-3 mx-5 rounded table-container'>
@@ -17,18 +17,34 @@ const VisibilityCard = () => {
             <tbody>
               <tr>
                 <th scope='row' className='text-start'>
-                  Visibility
+                  Maximum temperature
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.visibility ?? ''} Km
+                  {currentWeather.maxTempC ?? ''} &deg;C
                 </th>
               </tr>
               <tr>
                 <th scope='row' className='text-start'>
-                  Cloud cover
+                  Minimum temperature
                 </th>
                 <th className='text-end text-primary fw-bold'>
-                  {currentWeather.cloudCover ?? ''} %
+                  {currentWeather.minTempC ?? ''} &deg;C
+                </th>
+              </tr>
+              <tr>
+                <th scope='row' className='text-start'>
+                  Heat index
+                </th>
+                <th className='text-end text-primary fw-bold'>
+                  {currentWeather.heatIndexC ?? ''} &deg;C
+                </th>
+              </tr>
+              <tr>
+                <th scope='row' className='text-start'>
+                  Wind chill
+                </th>
+                <th className='text-end text-primary fw-bold'>
+                  {currentWeather.windChillC ?? ''} &deg;C
                 </th>
               </tr>
             </tbody>
@@ -39,4 +55,4 @@ const VisibilityCard = () => {
   );
 };
 
-export { VisibilityCard };
+export default TemperatureCard;

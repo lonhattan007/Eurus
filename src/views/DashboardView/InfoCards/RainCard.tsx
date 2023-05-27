@@ -27,7 +27,7 @@ const RainCard = () => {
                 <th scope='row' className='text-start'>
                   Snow fall
                 </th>
-                <th className='text-end text-primary fw-bold'>
+                <th scope='row' className='text-end text-primary fw-bold'>
                   {currentWeather.totalSnowCm ?? ''} cm
                 </th>
               </tr>
@@ -39,6 +39,22 @@ const RainCard = () => {
                   {currentWeather.dewPointC ?? ''} &deg;C
                 </th>
               </tr>
+              <tr>
+                <th scope='row' className='text-start'>
+                  Visibility
+                </th>
+                <th className='text-end text-primary fw-bold'>
+                  {currentWeather.visibility ?? ''} Km
+                </th>
+              </tr>
+              <tr>
+                <th scope='row' className='text-start'>
+                  Cloud cover
+                </th>
+                <th className='text-end text-primary fw-bold'>
+                  {currentWeather.cloudCover ?? ''} %
+                </th>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -47,4 +63,4 @@ const RainCard = () => {
   );
 };
 
-export { RainCard };
+export default RainCard;

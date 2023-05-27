@@ -20,8 +20,8 @@ const tabs = [
     element: <HourlyForecastTab />,
   },
   {
-    name: 'Weekly forecast',
-    ref: 'weekly-forecast',
+    name: 'Daily forecast',
+    ref: 'daily-forecast',
     element: <DailyForecastTab />,
   },
 ];

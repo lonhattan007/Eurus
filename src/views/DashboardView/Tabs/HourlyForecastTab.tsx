@@ -15,4 +15,4 @@ const HourlyForecastTab = () => {
   );
 };
 
-export { HourlyForecastTab };
+export default HourlyForecastTab;

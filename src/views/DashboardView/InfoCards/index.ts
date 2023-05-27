@@ -1,7 +1,6 @@
-import { HeatCard } from './HeatCard';
-import { DaylightCard } from './DaylightCard';
-import { RainCard } from './RainCard';
-import { WindCard } from './WindCard';
-import { VisibilityCard } from './VisibilityCard';
+import TemperatureCard from './TemperatureCard';
+import DaylightCard from './DaylightCard';
+import RainCard from './RainCard';
+import WindCard from './WindCard';
 
-export { HeatCard, DaylightCard, RainCard, WindCard, VisibilityCard };
+export { TemperatureCard, DaylightCard, RainCard, WindCard };
