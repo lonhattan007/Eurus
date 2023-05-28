@@ -29,14 +29,14 @@ const Greetings: FC<{
   };
 
   return (
-    <div className={'m-3 p-3 flex-column ' + props.className}>
-      <div className='font-bold display-3-lg display-4 text-primary'>
+    <div className={`flex m-3 p-3 flex-col ${props.className}`}>
+      <p className='font-bold text-[40px] text-primary'>
         {currentTime.toLocaleTimeString('en-US', {
           hour: '2-digit',
           minute: '2-digit',
         })}
-      </div>
-      <p className='m-1 text-dark'>
+      </p>
+      <p className='my-1 text-dark'>
         {currentTime.toLocaleDateString('en-US', {
           weekday: 'long',
           day: 'numeric',
@@ -44,7 +44,7 @@ const Greetings: FC<{
           year: 'numeric',
         })}
       </p>
-      <h4 className='font-[600] text-primary'>{greeting()}</h4>
+      <p className='font-semibold text-[20px] text-primary'>{greeting()}</p>
     </div>
   );
 };
