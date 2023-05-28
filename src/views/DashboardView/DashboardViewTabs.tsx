@@ -21,7 +21,7 @@ const tabs = [
 
 const DashboardViewTabs = () => {
   return (
-    <div className='flex flex-auto flex-col'>
+    <div className='flex flex-col flex-auto'>
       <Tab.Group>
         <Tab.List>
           {tabs.map((tab) => (

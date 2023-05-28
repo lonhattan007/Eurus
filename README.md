@@ -8,6 +8,7 @@ This is a personal and educational project to self-taught new technologies and a
 
 ## TODOs:
 
+- Recreate UI based on [this design](https://www.arcgis.com/apps/dashboards/737e5317ef7343feb3b859f7757682e0)
 - Migrate from `MDB React` to `TailwindCSS`
 - Fetch APIs from third-party providers, currently `OpenWeather`
 	- Better and more concise data

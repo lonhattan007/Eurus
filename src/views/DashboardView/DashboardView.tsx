@@ -15,10 +15,13 @@ const DashboardView: FC = () => {
     (state) => state.recentLocations.value,
   );
   return (
-    <div className='p-0 m-0 w-full h-full'>
+    <div className='p-0 m-0 w-full h-full min-h-fit'>
       <div className='flex overflow-x-hidden overflow-y-scroll flex-col m-0 w-screen h-screen md:flex-row-reverse'>
-        <div className='flex flex-auto justify-center items-start p-0 bg-white md:w-1/3 lg:w-1/4'>
-          <div className='container p-0'>
+        <div
+          id='search-box'
+          className='flex flex-auto justify-center items-start p-0 bg-white md:w-1/3 lg:w-1/4'
+        >
+          <div className='container flex-col items-start p-0'>
             <div className='flex justify-center my-5'>
               <LocationSearchBar />
             </div>
