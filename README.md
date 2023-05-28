@@ -57,7 +57,7 @@ This is a personal and educational project to self-taught new technologies and a
 ## Project Structure (TBA)
 
 ```markdown
-Weather-Forecast-frontend/
+Eurus/
 |__ src/
 |   |__ assets/.................... - dynamic assets
 |   |   
