@@ -21,7 +21,7 @@ const tabs = [
 
 const DashboardViewTabs = () => {
   return (
-    <>
+    <div className='flex flex-auto flex-col'>
       <Tab.Group>
         <Tab.List>
           {tabs.map((tab) => (
@@ -35,7 +35,7 @@ const DashboardViewTabs = () => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-    </>
+    </div>
   );
 };
 

@@ -34,13 +34,15 @@ const DetailedWeatherCard: FC = () => {
       <Suspense>
         <Greetings className='flex flex-auto md:hidden' />
       </Suspense>
-      <span className='flex flex-auto justify-center items-center mt-0 w-full text-2xl md:mt-3'>
+      <span className='flex flex-auto justify-center items-center my-0 w-full text-3xl font-bold md:mt-3'>
         <FiMapPin className='inline-block mr-1 w-6 h-6 stroke-1.5' />
         {location}
       </span>
-      <div className='flex flex-col flex-auto justify-evenly p-6 w-full'>
+      <div className='flex flex-col flex-auto justify-around py-0 px-5 w-full'>
         <div>
-          <h1 className='font-bold'>{weather.tempC ?? ''}&deg;C</h1>
+          <h1 className='font-bold text-[3.2em]'>
+            {weather.tempC ?? ''}&deg;C
+          </h1>
           <div className='text-base'>
             Real Feel {weather.feelsLikeC ?? ''}&deg;C
           </div>

@@ -5,7 +5,7 @@ import { useAppDispatch } from '@hooks/customReduxHooks';
 import { addLocation } from '@stores/recentLocationsSlice';
 import { updateLocation } from '@stores/currentLocationSlice';
 
-const LocationSearchBar = (props: any) => {
+const LocationSearchBar = () => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const dispatch = useAppDispatch();
 
@@ -17,8 +17,7 @@ const LocationSearchBar = (props: any) => {
 
   return (
     <Select
-      id={props.id}
-      className='rounded text-dark text-center w-[85%]'
+      className='rounded text-dark text-center w-[80%]'
       options={VietnamLocations}
       value={VietnamLocations.find(
         (option) => option.value === selectedLocation,
