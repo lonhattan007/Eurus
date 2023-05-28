@@ -72,7 +72,7 @@ This is the development guideline for the Eurus project.
 ## Project Structure (TBA)
 
 ```markdown
-Weather-Forecast-frontend/
+Eurus/
 |__ src/
 |   |__ assets/.................... - dynamic assets
 |   |   
