@@ -33,7 +33,7 @@
     "noFallthroughCasesInSwitch": true,
     "typeRoots": ["./node_modules/@types", "./typings"]
   },
-  "include": ["src", "./tests/setupTest.ts"],
+  "include": ["src", "*.ts", "./tests/setupTest.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
