@@ -26,9 +26,11 @@ This is the development guideline for the Eurus project.
 ## Tech stacks
 
 - `Node 16 & npm`: Runtime & package manager
-- `Vite`: Module bundler
+- [Typescript](https://www.typescriptlang.org/docs/handbook/react.html): Programming language
 - [React](https://reactjs.org/docs/getting-started.html): Core UI library
+- [`Vite`](https://vitejs.dev/): Project build tool
 - [Tailwind CSS](https://tailwindcss.com/docs/installation): Styling library
+- [Headless UI](https://headlessui.com/): Unstyled components library
 - [Redux](https://redux.js.org/introduction/getting-started): State management
 - [React Router](https://reactrouter.com/en/main/start/tutorial): Routing library
 - [Vitest](https://vitest.dev/guide/): Testing library
