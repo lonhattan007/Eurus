@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import Greetings from '@components/Greetings';
 import LocationSearchBar from '@components/LocationSearchBar';
 import DetailedWeatherCard from '@components/DetailedWeatherCard/DetailedWeatherCard';
 import SummarizedWeatherCard from '@components/SummarizedWeatherCard/SummarizedWeatherCard';
@@ -46,7 +45,6 @@ const DashboardView: FC = () => {
           </div>
         </div>
         <div className='flex flex-col flex-auto p-0 md:w-2/3 lg:w-3/4 bg-sky-100/90'>
-          <Greetings className='hidden items-start md:flex' />
           <div className='flex flex-row w-full'>
             <DashboardViewTabs />
           </div>

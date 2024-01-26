@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 // import axios from 'axios';
 import moment from 'moment';
+import { Weather } from '@models/Weather.interface';
 
-function useWeather(location: string) {
+function useWeather(location: string): Weather {
   // Round the time interval within an hour
-  const startDateTime = moment().startOf('h').format('YYYY-MM-DDTHH:mm:ss');
-  const endDateTime = moment()
+  const startDateTime: string = moment()
+    .startOf('h')
+    .format('YYYY-MM-DDTHH:mm:ss');
+  const endDateTime: string = moment()
     .add(1, 'h')
     .startOf('h')
     .format('YYYY-MM-DDTHH:mm:ss');
 
-  const [weather, _setWeather] = useState({});
+  const [weather, _setWeather] = useState<Weather>({});
 
   useEffect(() => {
     const params = {
